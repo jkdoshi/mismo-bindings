@@ -2,6 +2,9 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src/java"/>
+	<classpathentry kind="src" path="gen-src/java"/>
 	<classpathentry kind="var" path="JUNIT_HOME/junit.jar"/>
+	<classpathentry kind="lib" path="lib/java/jibx-run.jar"/>
+	<classpathentry kind="lib" path="lib/java/xpp3.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

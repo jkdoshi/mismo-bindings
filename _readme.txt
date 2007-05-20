@@ -6,3 +6,5 @@ Structure:
 doc: documentation
 src: source files
 src/java: Java source files
+lib/java: Java libraries needed at runtime
+tools: Tools needed at build-time
