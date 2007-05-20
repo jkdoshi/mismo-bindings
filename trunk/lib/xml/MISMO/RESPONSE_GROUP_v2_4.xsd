@@ -987,19 +987,26 @@
 		<xs:annotation>
 			<xs:documentation>Used on Attribute Tag Type Suffixes: date, DateTime, Year</xs:documentation>
 		</xs:annotation>
-		<xs:union memberTypes="xs:gYear xs:gYearMonth xs:date xs:dateTime"/>
+		<!--
+		JiBX's xsd2java tool could not handle xs:union, so I had to replace all the
+		xs:union's below with the most inclusive type
+		-->
+		<!-- <xs:union memberTypes="xs:gYear xs:gYearMonth xs:date xs:dateTime"/> -->
+		<xs:restriction base="xs:dateTime" />
 	</xs:simpleType>
 	<xs:simpleType name="ENVELOPE_MISMOMoney">
 		<xs:annotation>
 			<xs:documentation>Used on Attribute Tag Type Suffixes: Amount</xs:documentation>
 		</xs:annotation>
-		<xs:union memberTypes="xs:integer xs:decimal"/>
+		<!-- <xs:union memberTypes="xs:integer xs:decimal"/> -->
+		<xs:restriction base="xs:decimal" />
 	</xs:simpleType>
 	<xs:simpleType name="ENVELOPE_MISMONumeric">
 		<xs:annotation>
 			<xs:documentation>Used on Attribute Tag Type Suffixes: AcreageNumber, Count, Days, Months, Percent, PeriodNumber, Term, Units, Years, YearsOnJob</xs:documentation>
 		</xs:annotation>
-		<xs:union memberTypes="xs:integer xs:decimal"/>
+		<!-- <xs:union memberTypes="xs:integer xs:decimal"/> -->
+		<xs:restriction base="xs:decimal" />
 	</xs:simpleType>
 	<xs:simpleType name="ENVELOPE_MISMONumericString">
 		<xs:restriction base="xs:string">
