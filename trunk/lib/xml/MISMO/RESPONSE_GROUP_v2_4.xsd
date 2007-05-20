@@ -1,0 +1,1117 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:mismo="http://mismo.org/schema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:documentation>==============================================================================
+	Title                         : Enveloping Response Group v2.4 Zero Delta Schema
+	File Name                : ENVELOPING_RESPONSE_GROUP_v2_4.xsd
+	ELE Version            :                               
+	Creation Date          : 2006-07-10    
+	Modification Date    :           
+	Modification Date    : 
+	===============================================================================
+	 Copyright 2005 Mortgage Industry Standards Maintenance Organization (MISMO)
+	 All rights reserved.
+	 THIS MISMO STANDARD INCLUDES THE END USER LICENSE AGREEMENT ATTACHED HERETO AT http://www.mismo.org/mismo/pdf/ipr_policy.pdf AND IS GOVERNED BY AND SUBJECT TO THE END USER LICENSE AGREEMENT. NO USER OF
+	 THIS STANDARD MAY REMOVE THIS REFERENCE TO AND STATEMENT REGARDING THE END USER LICENSE. ANY HARD COPY PUBLICATION OF THIS STANDARD MUST INCLUDE AND ATTACH A HARD COPY PRINT OUT OFTHE END USER
+	 LICENSE.  ANY FURTHER ELECTRONIC DISTRIBUTION OF THIS STANDARD MUST INCLUDE A SPECIFIC REFERENCED LINK TO THE END USER LICENSE AGREEMENT OR OTHER MEANS OF ATTACHMENT OF THE END USER LICENSE
+	 AGREEMENT.
+
+	 DISCLAIMER: THIS MISMO STANDARD IS PROVIDED "AS IS." MISMO, THE MORTGAGE BANKERS ASSOCIATION OF AMERICA ("MBA"), THE COPYRIGHT HOLDER, THE AUTHORS OF THIS MISMO STANDARD AND ANY STANDARD-SETTING
+	 BODY PARTICIPANTS TO THIS MISMO STANDARD MAKE NO REPRESENTATIONS OR WARRANTIES (i) EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+	 TITLE OR NON-INFRINGEMENT; (ii) THAT THE CONTENTS OF SUCH MISMO STANDARD ARE FREE FROM ERROR OR SUITABLE FOR ANY PURPOSE; NOR THAT IMPLEMENTATION OF SUCH CONTENTS WILL NOT INFRINGE ANY THIRD-PARTY
+	 PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS. IN NO EVENT WILL MISMO, MBA, THE COPYRIGHT HOLDER OR THE STANDARD-SETTING BODY PARTICIPANTS TO THIS MISMO STANDARD BE LIABLE TO ANY PARTY FOR ANY
+	 DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES FOR ANY USE OF THIS MISMO STANDARD, INCLUDING, WITHOUT LIMITATION, ANY LOST PROFITS, BUSINESS INTERRUPTION, LOSS OF PROGRAMS OR OTHER DATA ON YOUR
+	 INFORMATION HANDLING SYSTEM OR OTHERWISE, EVEN IF MISMO, MBA, THE COPYRIGHT HOLDER AND/OR ANY AUTHORS AND/OR ANY STANDARD-SETTING BODY PARTICIPANTS TO THIS MISMO STANDARD ARE EXPRESSLY
+	 ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+	 ==============================================================================</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="SMART_DOCUMENT_xmldsig_core_schema_V_1_02.xsd">
+		<xs:annotation>
+			<xs:documentation>include the W3C XML Digital Signature DTD
+			</xs:documentation>
+		</xs:annotation>
+	</xs:import>
+	<xs:element name="RESPONSE_GROUP" type="ENVELOPE_RESPONSE_GROUP_Type"/>
+	<xs:complexType name="ENVELOPE_CONTACT_DETAIL_Type">
+		<xs:sequence>
+			<xs:element name="CONTACT_POINT" type="ENVELOPE_CONTACT_POINT_Type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="_Name" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The unparsed name of an individual acting as a contact for a party to the loan.</xs:documentation>
+				<xs:appinfo>
+					<mismo:HISTORY>
+						<mismo:MODIFY version="2.4">Envelope</mismo:MODIFY>
+					</mismo:HISTORY>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Contact Detail</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Closing</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Credit Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Flood</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Application</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Secondary Delivery</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Servicing</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Appraisal</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Servicing Transfer</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Investor Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>AUS</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Valuation</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Contact Detail Name</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_Identifier" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>This attribute may be used as a unique identifier for the contact type, as determined by trading partners.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT/>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Valuation</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Contact Detail Identifier</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_FirstName" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The first name of an individual acting as a contact for a party to the loan.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT/>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Valuation</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Contact Detail First Name</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_LastName" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The last name of an individual acting as a contact for a party to the loan.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT/>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Valuation</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Contact Detail Last Name</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_MiddleName" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The middle name of an individual acting as a contact for a party to the loan.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT/>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Valuation</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Contact Detail Middle Name</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_NameSuffix" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The name suffix of an individual acting as a contact for a party to the loan.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT/>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Valuation</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Contact Detail Name Suffix</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_SequenceIdentifier" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>An identifier used to number the contact detail elements in sequential order (i.e. 1..n) to be able to prioritize the order in which the contacts are to be contacted.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT/>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Valuation</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Contact Detail Sequence Identifier</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_ID" type="xs:ID"/>
+	</xs:complexType>
+	<xs:complexType name="ENVELOPE_CONTACT_POINT_Type">
+		<xs:sequence/>
+		<xs:attribute name="_RoleType" type="ENVELOPE_ContactPointRoleTypeEnumerated">
+			<xs:annotation>
+				<xs:documentation>This element sets the type of role (i.e. Home, Work or Mobile) used for the Contact Point Type (Phone, Fax, Email).</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>Enumerated</mismo:DATATYPE>
+					<mismo:CONTEXT>Contact Point</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Credit Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Flood</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Secondary Delivery</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Servicing</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Appraisal</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>AUS</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Servicing Transfer</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Investor Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Valuation</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Contact Point Role Type</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_Type" type="ENVELOPE_ContactPointTypeEnumerated">
+			<xs:annotation>
+				<xs:documentation>This datum sets the Type (Phone, Fax, E-Mail, Other) used for the Contact Point Value.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>Enumerated</mismo:DATATYPE>
+					<mismo:CONTEXT>Contact Point</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Credit Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Flood</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Secondary Delivery</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Servicing</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Appraisal</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>AUS</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Servicing Transfer</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Investor Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Valuation</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Contact Point Type</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_TypeOtherDescription" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>A free-form text field used to describe the Contact Point if Other is selected as the Contact Point Type.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Contact Point</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Credit Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Flood</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Secondary Delivery</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Servicing</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Appraisal</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>AUS</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Servicing Transfer</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Investor Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Valuation</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Contact Point Type Other Description</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_Value" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>This is the actual value (Phone, Fax, E-Mail, Other) of the Contact Point Type.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Contact Point</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Credit Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Flood</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Secondary Delivery</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Servicing</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Appraisal</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>AUS</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Servicing Transfer</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Investor Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Valuation</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Contact Point Value</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_PreferenceIndicator" type="ENVELOPE_MISMOIndicatorType">
+			<xs:annotation>
+				<xs:documentation>This indicator is set to be true when the particular contacts Contact Point (i.e. phone number) is preferred over any others.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>Boolean</mismo:DATATYPE>
+					<mismo:CONTEXT>Contact Point</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Credit Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Flood</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Secondary Delivery</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Servicing</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Appraisal</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>AUS</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Servicing Transfer</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Investor Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Valuation</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Contact Point Preference Indicator</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_RoleTypeOtherDescription" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>A free-form text field used to describe the Contact Point Role Type if Other is selected as the Contact Point Role Type</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT/>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>AUS</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Contact Point Role Type Other Description</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_ID" type="xs:ID"/>
+	</xs:complexType>
+	<xs:complexType name="ENVELOPE_KEY_Type">
+		<xs:sequence/>
+		<xs:attribute name="_Name" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>A generic placeholder to add key descriptions in transactions.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Request, Response</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Credit Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Key Name</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_Value" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>A generic placeholder for a value to be associated with a key description for a transaction exchange.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Request, Response</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Credit Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Key Value</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_ID" type="xs:ID"/>
+	</xs:complexType>
+	<xs:complexType name="ENVELOPE_RESPOND_TO_PARTY_Type">
+		<xs:sequence>
+			<xs:element name="CONTACT_DETAIL" type="ENVELOPE_CONTACT_DETAIL_Type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="_Name" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Identifies the name of the party who is the intended recipient of the XML response message.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Response Group</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Respond To Party Name</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_StreetAddress" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The unstructured (Unparsed) street address of the party the response is being sent to (e.g., 123 Main Street).</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Response Group</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Respond To Party Street Address</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_StreetAddress2" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The unstructured (Unparsed) street address 2nd division of the party the response is being sent to (e.g., Unit 1223).</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Response Group</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Respond To Party Street Address 2</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_City" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The city in which the party the response is being sent to is located.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Response Group</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Respond To Party City</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_State" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The state in which the party the response is being sent to is located.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Response Group</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Respond To Party State</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_PostalCode" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The postal code (zip code in the US) of the party the response is being sent to. Zip code may be either 5 or 9 digits.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Response Group</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Respond To Party Postal Code</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_Identifier" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>This attribute may be used as a unique identifier for the respond to party, as determined by trading partners.</xs:documentation>
+				<xs:appinfo>
+					<mismo:HISTORY>
+						<mismo:ADD version="2.4">Envelope</mismo:ADD>
+					</mismo:HISTORY>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT/>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Respond To Party Identifier</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_TransactionIdentifier" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The identifier used by the respond to party to track a transaction or associated interactions. The identifier is expected to be created by the requesting party and supplied in the requesting party's transaction identifier attribute.</xs:documentation>
+				<xs:appinfo>
+					<mismo:HISTORY>
+						<mismo:ADD version="2.4">Envelope</mismo:ADD>
+					</mismo:HISTORY>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT/>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Respond To Party Transaction Identifier</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_ID" type="xs:ID"/>
+	</xs:complexType>
+	<xs:complexType name="ENVELOPE_RESPONDING_PARTY_Type">
+		<xs:sequence>
+			<xs:element name="CONTACT_DETAIL" type="ENVELOPE_CONTACT_DETAIL_Type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="_Name" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Identifies the name of the party responding to this message.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Response Group</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Responding Party Name</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_StreetAddress" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The first line of the responding party's street address (e.g., 123 Main Street).</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Response Group</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Responding Party Street Address</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_StreetAddress2" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The second line of the responding party's street address (e.g., Suite 250).</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Response Group</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Responding Party Street Address 2</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_City" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The city in which the responding party is located.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Response Group</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Responding Party City</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_State" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The state in which the responding party is located. This is usually entered using the USPS two letter state abbreviation.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Response Group</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Responding Party State</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_PostalCode" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The 5 or 9 digit postal code in which the responding party is located.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Response Group</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Responding Party Postal Code</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_Identifier" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>A unique identifier is often used to reference an organization. This attribute may be used as a unique identifier for the responding party, as determined by trading partners.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Responding Party</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Responding Party Identifier</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_TransactionIdentifier" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The identifier created and used by the responding party to track a transaction or associated interactions.</xs:documentation>
+				<xs:appinfo>
+					<mismo:HISTORY>
+						<mismo:ADD version="2.4">Envelope</mismo:ADD>
+					</mismo:HISTORY>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT/>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Responding Party Transaction Identifier</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_ID" type="xs:ID"/>
+	</xs:complexType>
+	<xs:complexType name="ENVELOPE_RESPONSE_DATA_Type">
+		<xs:sequence/>
+	</xs:complexType>
+	<xs:complexType name="ENVELOPE_RESPONSE_GROUP_Type">
+		<xs:sequence>
+			<xs:element name="RESPONDING_PARTY" type="ENVELOPE_RESPONDING_PARTY_Type"/>
+			<xs:element name="SUBMITTING_PARTY" type="ENVELOPE_SUBMITTING_PARTY_Type" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="RESPOND_TO_PARTY" type="ENVELOPE_RESPOND_TO_PARTY_Type"/>
+			<xs:element name="RESPONSE" type="ENVELOPE_RESPONSE_Type" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="dsig:Signature" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="MISMOVersionID" type="xs:string" fixed="2.4"/>
+		<xs:attribute name="_Identifier" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>This attribute may be used as a unique identifier for the response group, as determined by trading partners.</xs:documentation>
+				<xs:appinfo>
+					<mismo:HISTORY>
+						<mismo:ADD version="2.4">Envelope</mismo:ADD>
+					</mismo:HISTORY>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT/>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Response Group Identifier</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_ID" type="xs:ID"/>
+	</xs:complexType>
+	<xs:complexType name="ENVELOPE_RESPONSE_Type">
+		<xs:sequence>
+			<xs:element name="KEY" type="ENVELOPE_KEY_Type" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="RESPONSE_DATA" type="ENVELOPE_RESPONSE_DATA_Type" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="STATUS" type="ENVELOPE_STATUS_Type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="_ID" type="xs:ID"/>
+		<xs:attribute name="ResponseDateTime" type="ENVELOPE_MISMODateTime">
+			<xs:annotation>
+				<xs:documentation>A system generated datetime stamp enclosed within each response to identify the initiation time of the response.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>Date/Time</mismo:DATATYPE>
+					<mismo:CONTEXT>Response</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Response Date Time</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="InternalAccountIdentifier" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The account number or identifier assigned by a service provider to a service requestor. The Internal Account Identifier is supplied with request transactions to allow the service provider to identify the billing account to be used.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Request, Requesting Party, Response</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Credit Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Internal Account Identifier</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="LoginAccountIdentifier" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>User id used to authenticate requesting party to the vendor.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Request, Submitting Party</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Login Account Identifier</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="LoginAccountPassword" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Password used to authenticate requesting party to the vendor.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Request, Submitting Party</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Login Account Password</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_Identifier" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>This attribute may be used as a unique identifier for the response, as determined by trading partners.</xs:documentation>
+				<xs:appinfo>
+					<mismo:HISTORY>
+						<mismo:ADD version="2.4">Envelope</mismo:ADD>
+					</mismo:HISTORY>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT/>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Response Identifier</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ENVELOPE_STATUS_Type">
+		<xs:sequence/>
+		<xs:attribute name="_Condition" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Describes the severity of a status message.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Status</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Credit Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Status Condition</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_Code" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Code values exchanged between business partners relating to the condition of a status message.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Status</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Credit Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Status Code</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_Name" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Business name for the value shown in the Status Code data element.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Status</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Credit Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Status Name</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_Description" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Text describing specific details of a status message.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Status</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Credit Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Status Description</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_ID" type="xs:ID"/>
+	</xs:complexType>
+	<xs:complexType name="ENVELOPE_SUBMITTING_PARTY_Type">
+		<xs:sequence>
+			<xs:element name="CONTACT_DETAIL" type="ENVELOPE_CONTACT_DETAIL_Type" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="_SequenceIdentifier" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>A unique identifier assigned to each Submitting Party to indicate the order in which they handled the transaction.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Submitting Party</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Credit Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Submitting Party Sequence Identifier</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_Name" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Identifies the name of the party submitting the XML message.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Submitting Party</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Submitting Party Name</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_StreetAddress" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The first line of the submitting party's street address (e.g., 123 Main Street).</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Submitting Party</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Submitting Party Street Address</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_StreetAddress2" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The second line of the submitting party's street address (e.g., Suite 250).</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Submitting Party</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Submitting Party Street Address 2</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_City" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The city in which the submitting party is located.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Submitting Party</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Submitting Party City</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_State" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The state in which the submitting party is located. This is usually entered using the USPS two letter state abbreviation.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Submitting Party</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Submitting Party State</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_PostalCode" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The 5 or 9 digit postal code in which the submitting party is located.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Submitting Party</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Submitting Party Postal Code</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="LoginAccountIdentifier" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>User id used to authenticate requesting party to the vendor.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Request, Submitting Party</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Login Account Identifier</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="LoginAccountPassword" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Password used to authenticate requesting party to the vendor.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Request, Submitting Party</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Login Account Password</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_Identifier" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Provides a means by which an intermediary party to a service request can be identified.</xs:documentation>
+				<xs:appinfo>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT>Submitting Party</mismo:CONTEXT>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Credit Reporting</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Submitting Party Identifier</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_TransactionIdentifier" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The identifier created and used by the submitting party to track a transaction or associated interactions. The identifier is expected to be returned in the submitting party's transaction identifier attribute.</xs:documentation>
+				<xs:appinfo>
+					<mismo:HISTORY>
+						<mismo:ADD version="2.4">Envelope</mismo:ADD>
+					</mismo:HISTORY>
+					<mismo:DATATYPE>String</mismo:DATATYPE>
+					<mismo:CONTEXT/>
+					<mismo:PROCESSES>
+						<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+					</mismo:PROCESSES>
+					<mismo:LDD_NAME>Submitting Party Transaction Identifier</mismo:LDD_NAME>
+				</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="_ID" type="xs:ID"/>
+	</xs:complexType>
+	<xs:simpleType name="ENVELOPE_MISMOAmount">
+		<xs:restriction base="xs:decimal"/>
+	</xs:simpleType>
+	<xs:simpleType name="ENVELOPE_MISMOCount">
+		<xs:restriction base="xs:integer"/>
+	</xs:simpleType>
+	<xs:simpleType name="ENVELOPE_MISMOFactor">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ENVELOPE_MISMOIndicatorType">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ENVELOPE_MISMODateTime">
+		<xs:annotation>
+			<xs:documentation>Used on Attribute Tag Type Suffixes: date, DateTime, Year</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="xs:gYear xs:gYearMonth xs:date xs:dateTime"/>
+	</xs:simpleType>
+	<xs:simpleType name="ENVELOPE_MISMOMoney">
+		<xs:annotation>
+			<xs:documentation>Used on Attribute Tag Type Suffixes: Amount</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="xs:integer xs:decimal"/>
+	</xs:simpleType>
+	<xs:simpleType name="ENVELOPE_MISMONumeric">
+		<xs:annotation>
+			<xs:documentation>Used on Attribute Tag Type Suffixes: AcreageNumber, Count, Days, Months, Percent, PeriodNumber, Term, Units, Years, YearsOnJob</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="xs:integer xs:decimal"/>
+	</xs:simpleType>
+	<xs:simpleType name="ENVELOPE_MISMONumericString">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ENVELOPE_MISMONumericString9">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{9}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ENVELOPE_MISMONumber">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ENVELOPE_MISMONonNegativeInteger">
+		<xs:restriction base="xs:nonNegativeInteger"/>
+	</xs:simpleType>
+	<xs:simpleType name="ENVELOPE_MISMOPercent">
+		<xs:restriction base="xs:decimal"/>
+	</xs:simpleType>
+	<xs:simpleType name="ENVELOPE_MISMORate">
+		<xs:restriction base="xs:decimal"/>
+	</xs:simpleType>
+	<xs:simpleType name="ENVELOPE_MISMOValue">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ENVELOPE_ContactPointRoleTypeEnumerated">
+		<xs:annotation>
+			<xs:appinfo>
+				<mismo:DATATYPE>Enumerated</mismo:DATATYPE>
+				<mismo:CONTEXT>Contact Point</mismo:CONTEXT>
+				<mismo:PROCESSES>
+					<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>Credit Reporting</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>Flood</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>Secondary Delivery</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>Servicing</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>Appraisal</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>AUS</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>Servicing Transfer</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>Investor Reporting</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>Valuation</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+				</mismo:PROCESSES>
+				<mismo:LDD_NAME>Contact Point Role Type</mismo:LDD_NAME>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Home">
+				<xs:annotation>
+					<xs:documentation>The applicable Point Type applies to the contacts home.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Mobile">
+				<xs:annotation>
+					<xs:documentation>The applicable Point Type applies to the contacts mobile (phone/fax/email).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Work">
+				<xs:annotation>
+					<xs:documentation>The applicable Point Type applies to the contacts work.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ENVELOPE_ContactPointTypeEnumerated">
+		<xs:annotation>
+			<xs:appinfo>
+				<mismo:DATATYPE>Enumerated</mismo:DATATYPE>
+				<mismo:CONTEXT>Contact Point</mismo:CONTEXT>
+				<mismo:PROCESSES>
+					<mismo:PROCESS_AREA>Service ordering</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>Credit Reporting</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>Flood</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>Secondary Delivery</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>Servicing</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>Appraisal</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>AUS</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>Servicing Transfer</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>Investor Reporting</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>PRIA</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>MI</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>Valuation</mismo:PROCESS_AREA>
+					<mismo:PROCESS_AREA>Envelope</mismo:PROCESS_AREA>
+				</mismo:PROCESSES>
+				<mismo:LDD_NAME>Contact Point Type</mismo:LDD_NAME>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Email">
+				<xs:annotation>
+					<xs:documentation>The Contact Point Value contains an email address.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Fax">
+				<xs:annotation>
+					<xs:documentation>The Contact Point Value contains a fax number.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Other">
+				<xs:annotation>
+					<xs:documentation>The Contact Point Value contains some other Contact Point Type.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Phone">
+				<xs:annotation>
+					<xs:documentation>The Contact Point Value contains a telephone number.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

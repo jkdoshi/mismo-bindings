@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Generated on 6/2/2005 8:01:29 AM from file SMART_DOCUMENT_xmldsig_core_schema_V_1_02.dtd-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://www.w3.org/2000/09/xmldsig#"
+  targetNamespace="http://www.w3.org/2000/09/xmldsig#"
+  elementFormDefault="unqualified"
+  attributeFormDefault="unqualified">
+  <xs:annotation>
+    <xs:documentation>Title: Digital Signature  Modified DTD for the eMortgage specification
+Description: This DTD contains the top level element Signature for
+digitally signing documents
+
+Original Date: 9/7/2001
+Revisions:Fannie Mae version 1.01 dated 10/02/2001
+Rachael Sokolowski, version 1.06 dated 12/04/2001
+Rachael Sokolowski version 1.07 dated 1/29/2002 - namespace
+Rachael Sokolowski version 1.08 dated 2/26/2002 -
+W3C recommendation version and renamed to V_1_0
+Rachael Sokolowski version 1.09 dated 10/27/2003 -
+added date and time stamp
+Rachael Sokolowski version 1.10, dated 12/04/2003. This version
+includes consistent filename conventions, file
+formats (PC) and an updated copyright
+Other comments:
+
+
+DTD for XML Signatures
+http://www.w3.org/2000/09/xmldsig#
+Joseph Reagle $last changed 20001215$
+
+http://www.w3.org/2000/09/xmldsig#
+$Revision: 1.1 $ on $Date: 2002/02/08 20:32:26
+$ by $Author: reagle $
+
+Copyright 2001 The Internet Society and W3C (Massachusetts
+Institute of Technology, Institut National de
+Recherche en Informatique et en
+Automatique, Keio University). All Rights Reserved.
+http://www.w3.org/Consortium/Legal/
+
+This document is governed by the W3C Software License [1]
+as described in the FAQ [2].
+
+[1] http://www.w3.org/Consortium/Legal/copyright-software-19980720
+[2] http://www.w3.org/Consortium/Legal/IPR-FAQ-20000620.html#DTD
+Copyright 2004 Mortgage Industry Standards Maintenance Organization
+(MISMO).All rights reserved.
+Permission to use, copy, modify, and distribute the MISMO
+DTD and its accompanying documentation for any purpose and without
+fee is hereby granted in perpetuity, provided that the above copyright
+notice and this paragraph appear in all copies. The copyright holders
+make no representation about the suitability of the DTD for any
+purpose.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Signature" type="Signature_Type"/>
+  <xs:complexType name="CanonicalizationMethod_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+    <xs:attribute name="Algorithm" type="xs:string" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="DateTimeStamp_Type">
+    <xs:sequence/>
+    <xs:attribute name="DateTime" type="xs:string" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="DigestMethod_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+    <xs:attribute name="Algorithm" type="xs:string" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="DigestValue_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="DSAKeyValue_Type">
+    <xs:sequence>
+      <xs:sequence minOccurs="0" maxOccurs="1">
+        <xs:element name="P" type="P_Type" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="Q" type="Q_Type" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+      <xs:element name="G" type="G_Type" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Y" type="Y_Type" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="J" type="J_Type" minOccurs="0" maxOccurs="1"/>
+      <xs:sequence minOccurs="0" maxOccurs="1">
+        <xs:element name="Seed" type="Seed_Type" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="PgenCounter" type="PgenCounter_Type" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Exponent_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="G_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="HMACOutputLength_Type" mixed="true">
+    <xs:annotation>
+      <xs:documentation>Algorithm Parameters</xs:documentation>
+    </xs:annotation>
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="J_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="KeyInfo_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="KeyName" type="KeyName_Type" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="KeyValue" type="KeyValue_Type" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="RetrievalMethod" type="RetrievalMethod_Type" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="X509Data" type="X509Data_Type" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="PGPData" type="PGPData_Type" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="SPKIData" type="SPKIData_Type" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="MgmtData" type="MgmtData_Type" minOccurs="1" maxOccurs="1"/>
+    </xs:choice>
+    <xs:attribute name="Id" type="xs:ID"/>
+  </xs:complexType>
+  <xs:complexType name="KeyName_Type" mixed="true">
+    <xs:annotation>
+      <xs:documentation>Key Information</xs:documentation>
+    </xs:annotation>
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="KeyValue_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="DSAKeyValue" type="DSAKeyValue_Type" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="RSAKeyValue" type="RSAKeyValue_Type" minOccurs="1" maxOccurs="1"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="Manifest_Type">
+    <xs:sequence>
+      <xs:element name="Reference" type="Reference_Type" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="Id" type="xs:ID"/>
+  </xs:complexType>
+  <xs:complexType name="MgmtData_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="Modulus_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="Object_Type" mixed="true">
+    <xs:annotation>
+      <xs:documentation>Extensible Content</xs:documentation>
+    </xs:annotation>
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Signature" type="Signature_Type" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="SignatureProperties" type="SignatureProperties_Type" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Manifest" type="Manifest_Type" minOccurs="1" maxOccurs="1"/>
+    </xs:choice>
+    <xs:attribute name="Id" type="xs:ID"/>
+    <xs:attribute name="MimeType" type="xs:string"/>
+    <xs:attribute name="Encoding" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="P_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="PgenCounter_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="PGPData_Type">
+    <xs:annotation>
+      <xs:documentation>PGPData</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:sequence>
+        <xs:element name="PGPKeyID" type="PGPKeyID_Type" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="PGPKeyPacket" type="PGPKeyPacket_Type" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+      <xs:sequence>
+        <xs:element name="PGPKeyPacket" type="PGPKeyPacket_Type" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="PGPKeyID_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="PGPKeyPacket_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="Q_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="Reference_Type">
+    <xs:sequence>
+      <xs:element name="Transforms" type="Transforms_Type" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="DigestMethod" type="DigestMethod_Type" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DigestValue" type="DigestValue_Type" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="Id" type="xs:ID"/>
+    <xs:attribute name="URI" type="xs:string"/>
+    <xs:attribute name="Type" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="RetrievalMethod_Type">
+    <xs:sequence>
+      <xs:element name="Transforms" type="Transforms_Type" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="URI" type="xs:string" use="required"/>
+    <xs:attribute name="Type" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="RSAKeyValue_Type">
+    <xs:sequence>
+      <xs:element name="Modulus" type="Modulus_Type" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Exponent" type="Exponent_Type" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Seed_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="Signature_Type">
+    <xs:sequence>
+      <xs:element name="SignedInfo" type="SignedInfo_Type" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="SignatureValue" type="SignatureValue_Type" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="KeyInfo" type="KeyInfo_Type" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Object" type="Object_Type" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="Id" type="xs:ID"/>
+  </xs:complexType>
+  <xs:complexType name="SignatureMethod_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="HMACOutputLength" type="HMACOutputLength_Type" minOccurs="1" maxOccurs="1"/>
+    </xs:choice>
+    <xs:attribute name="Algorithm" type="xs:string" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="SignatureProperties_Type">
+    <xs:sequence>
+      <xs:element name="SignatureProperty" type="SignatureProperty_Type" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="Id" type="xs:ID"/>
+  </xs:complexType>
+  <xs:complexType name="SignatureProperty_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="DateTimeStamp" type="DateTimeStamp_Type" minOccurs="1" maxOccurs="1"/>
+    </xs:choice>
+    <xs:attribute name="Target" type="xs:string" use="required"/>
+    <xs:attribute name="Id" type="xs:ID"/>
+  </xs:complexType>
+  <xs:complexType name="SignatureValue_Type" mixed="true">
+    <xs:annotation>
+      <xs:documentation>Internet Explorer would not display this (problem in default stylesheet) with the default namespace attribute</xs:documentation>
+    </xs:annotation>
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+    <xs:attribute name="Id" type="xs:ID"/>
+  </xs:complexType>
+  <xs:complexType name="SignedInfo_Type">
+    <xs:sequence>
+      <xs:element name="CanonicalizationMethod" type="CanonicalizationMethod_Type" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="SignatureMethod" type="SignatureMethod_Type" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Reference" type="Reference_Type" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="Id" type="xs:ID"/>
+  </xs:complexType>
+  <xs:complexType name="SPKIData_Type">
+    <xs:annotation>
+      <xs:documentation>SPKI Data</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="SPKISexp" type="SPKISexp_Type" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SPKISexp_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="Transform_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="XPath" type="XPath_Type" minOccurs="1" maxOccurs="1"/>
+    </xs:choice>
+    <xs:attribute name="Algorithm" type="xs:string" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="Transforms_Type">
+    <xs:sequence>
+      <xs:element name="Transform" type="Transform_Type" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="X509Certificate_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="X509CRL_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="X509Data_Type">
+    <xs:annotation>
+      <xs:documentation>X.509 Data</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:choice minOccurs="1" maxOccurs="unbounded">
+        <xs:element name="X509IssuerSerial" type="X509IssuerSerial_Type" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="X509SKI" type="X509SKI_Type" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="X509SubjectName" type="X509SubjectName_Type" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="X509Certificate" type="X509Certificate_Type" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="X509CRL" type="X509CRL_Type" minOccurs="1" maxOccurs="1"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="X509IssuerName_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="X509IssuerSerial_Type">
+    <xs:sequence>
+      <xs:element name="X509IssuerName" type="X509IssuerName_Type" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="X509SerialNumber" type="X509SerialNumber_Type" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="X509SerialNumber_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="X509SKI_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="X509SubjectName_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="XPath_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+  <xs:complexType name="Y_Type" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+  </xs:complexType>
+</xs:schema>
+
