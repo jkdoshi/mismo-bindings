@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="mismo-bindings">
+	<target name="init">
+		<property file="project.properties" />
+	</target>
+	<target name="xsd2jibx" depends="init">
+		<java jar="tools/xsd2jibx/xsd2jibx.jar" fork="true">
+			<classpath path="tools/xsd2jibx/*.jar" />
+			<arg line="-d gen-src/java" />
+			<arg line="-n com.sysdelphia.bindings.mismo" />
+			<arg line="-p http://www.w3.org/2000/09/xmldsig#=com.sysdelphia.bindings.w3.xmldsig" />
+			<arg line="${xsd2jibx.grammars}" />
+		</java>
+	</target>
+</project>
