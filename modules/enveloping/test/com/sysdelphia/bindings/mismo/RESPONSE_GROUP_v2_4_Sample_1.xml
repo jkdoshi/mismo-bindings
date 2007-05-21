@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--MISMO Response Group v2.4 draft sample-->
+<!DOCTYPE RESPONSE_GROUP SYSTEM "Response_Group_v2_4_Draft.dtd">
+<RESPONSE_GROUP MISMOVersionID="2.4" _Identifier="{3F2504E0-4F89-11D3-9A0C-0305E82C3X567}" _ID="RG123">
+	<RESPONDING_PARTY _Name="Sample Service Provider" _StreetAddress="1 Infinite Loop" _City="Walnut Creek" _State="CA" _PostalCode="94597" _Identifier="IDSERVICE" 
+_TransactionIdentifier="{8D021008-B9ED-40b6-9704-F81D94100E8D}" _ID="RES123">
+		<CONTACT_DETAIL _Name="Sherri Doesatonne" _Identifier="Tech" _FirstName="Sherri" _LastName="Doesatonne" _SequenceIdentifier="1" _ID="CD1">
+			<CONTACT_POINT _RoleType="Home" _Type="Phone" _Value="925-658-7878" _PreferenceIndicator="Y" _ID="CP1"/>
+			<CONTACT_POINT _RoleType="Other" _Type="Email" _Value="sherridoesatonne@samplesp.com" _PreferenceIndicator="N" _RoleTypeOtherDescription="Boat" _ID="CP2"/>
+		</CONTACT_DETAIL>
+	</RESPONDING_PARTY>
+	<SUBMITTING_PARTY _SequenceIdentifier="1" _Name="Sample L.O.S." LoginAccountIdentifier="losusername" LoginAccountPassword="lospassword" _Identifier="IDLOS1" 
+_TransactionIdentifier="{2C8B096C-15C1-4bc0-AA6B-24373ADAB8CD}" _ID="SUB1">
+		<CONTACT_DETAIL _Name="Gloriasees Alot" _Identifier="Tech" _FirstName="Gloriasees" _LastName="Alot" _SequenceIdentifier="1" _ID="CD2">
+			<CONTACT_POINT _RoleType="Home" _Type="Phone" _Value="703-555-1212" _PreferenceIndicator="Y"/>
+			<CONTACT_POINT _RoleType="Work" _Type="Email" _Value="gloriaseesalot@samplelos.com" _PreferenceIndicator="Y" _ID="CP3"/>
+		</CONTACT_DETAIL>
+		<CONTACT_DETAIL _Name="Fred Smith" _Identifier="Business" _FirstName="Fred" _LastName="Smith" _SequenceIdentifier="2" _ID="CD3">
+			<CONTACT_POINT _Type="Phone" _Value="201-348-4034"/>
+			<CONTACT_POINT _Type="Email" _Value="fsmith@samplelender.com"/>
+		</CONTACT_DETAIL>
+	</SUBMITTING_PARTY>
+	<SUBMITTING_PARTY _SequenceIdentifier="2" _Name="Sample Portal" LoginAccountIdentifier="portalusername" LoginAccountPassword="portalpassword" _Identifier="IDPORTAL1" 
+_TransactionIdentifier="{B27CEE5A-6857-406f-B847-C644D89BCEFA}" _ID="SUB2">
+		<CONTACT_DETAIL _Name="Gaberuns abit" _Identifier="Tech" _FirstName="Gaberuns" _LastName="abit" _SequenceIdentifier="1">
+			<CONTACT_POINT _Type="Phone" _Value="202-456-1111"/>
+			<CONTACT_POINT _Type="Email" _Value="gaberunsabit@sampleportal.com"/>
+		</CONTACT_DETAIL>
+	</SUBMITTING_PARTY>
+	<RESPOND_TO_PARTY _Name="Sample Lender" _Identifier="IDABC" _TransactionIdentifier="{9D021008-B9ED-40b6-9704-F81D94100E8D}" _ID="RTP1">
+		<CONTACT_DETAIL _Name="Greg O'Welisten" _SequenceIdentifier="1" _ID="CP5">
+			<CONTACT_POINT _RoleType="Mobile" _Type="Phone" _Value="201-348-4033" _PreferenceIndicator="Y"/>
+			<CONTACT_POINT _Type="Email" _Value="gregowelisten@samplelender.com"/>
+		</CONTACT_DETAIL>
+	</RESPOND_TO_PARTY>
+	<RESPONSE ResponseDateTime="2004-04-06T14:25:54Z" InternalAccountIdentifier="1234" LoginAccountIdentifier="Login Text" LoginAccountPassword="Password Text" 
+_Identifier="{3F2504E0-4F89-11D3-9A0C-0305E82C3666}" _ID="RES1">
+		<KEY _Name="Text" _Value="Text" _ID="KEY1"/>
+		<RESPONSE_DATA>----THE RESPONSE PAYLOAD ----</RESPONSE_DATA>
+	</RESPONSE>
+</RESPONSE_GROUP>
