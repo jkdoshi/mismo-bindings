@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<binding>
+  <mapping class="com.sysdelphia.bindings.mismo.ENVELOPECONTACTDETAILType" abstract="true">
+    <collection field="contacTPOINTList">
+      <structure map-as="com.sysdelphia.bindings.mismo.ENVELOPECONTACTPOINTType"></structure>
+    </collection>
+    <value name="_Name" field="_Name" usage="optional" style="attribute"/>
+    <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
+    <value name="_FirstName" field="_FirstName" usage="optional" style="attribute"/>
+    <value name="_LastName" field="_LastName" usage="optional" style="attribute"/>
+    <value name="_MiddleName" field="_MiddleName" usage="optional" style="attribute"/>
+    <value name="_NameSuffix" field="_NameSuffix" usage="optional" style="attribute"/>
+    <value name="_SequenceIdentifier" field="_SequenceIdentifier" usage="optional" style="attribute"/>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="CONTACT_POINT" class="com.sysdelphia.bindings.mismo.ENVELOPECONTACTPOINTType">
+    <value name="_RoleType" field="_RoleType" usage="optional" style="attribute"/>
+    <value name="_Type" field="_Type" usage="optional" style="attribute"/>
+    <value name="_TypeOtherDescription" field="_TypeOtherDescription" usage="optional" style="attribute"/>
+    <value name="_Value" field="_Value" usage="optional" style="attribute"/>
+    <value name="_PreferenceIndicator" field="_PreferenceIndicator" usage="optional" style="attribute"/>
+    <value name="_RoleTypeOtherDescription" field="_RoleTypeOtherDescription" usage="optional" style="attribute"/>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="ENVELOPE_DIG_SIG_type" class="com.sysdelphia.bindings.mismo.ENVELOPEDIGSIGType"></mapping>
+  <mapping class="com.sysdelphia.bindings.mismo.ENVELOPEKEYType" abstract="true">
+    <value name="_Name" field="_Name" usage="optional" style="attribute"/>
+    <value name="_Value" field="_Value" usage="optional" style="attribute"/>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="PREFERRED_RESPONSE" class="com.sysdelphia.bindings.mismo.ENVELOPEPREFERREDRESPONSEType">
+    <value name="_Format" field="_Format" usage="optional" style="attribute"/>
+    <value name="_Method" field="_Method" usage="optional" style="attribute"/>
+    <value name="_Destination" field="_Destination" usage="optional" style="attribute"/>
+    <value name="_FormatOtherDescription" field="_FormatOtherDescription" usage="optional" style="attribute"/>
+    <value name="_MethodOther" field="_MethodOther" usage="optional" style="attribute"/>
+    <value name="_UseEmbeddedFileIndicator" field="_UseEmbeddedFileIndicator" usage="optional" style="attribute"/>
+    <value name="MIMEType" field="mimeType" usage="optional" style="attribute"/>
+    <value name="_VersionIdentifier" field="_VersionIdentifier" usage="optional" style="attribute"/>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="RECEIVING_PARTY" class="com.sysdelphia.bindings.mismo.ENVELOPERECEIVINGPARTYType">
+    <collection field="contacTDETAILList">
+      <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.ENVELOPECONTACTDETAILType"></structure>
+    </collection>
+    <value name="_Name" field="_Name" usage="optional" style="attribute"/>
+    <value name="_StreetAddress" field="_StreetAddress" usage="optional" style="attribute"/>
+    <value name="_StreetAddress2" field="_StreetAddress2" usage="optional" style="attribute"/>
+    <value name="_City" field="_City" usage="optional" style="attribute"/>
+    <value name="_State" field="_State" usage="optional" style="attribute"/>
+    <value name="_PostalCode" field="_PostalCode" usage="optional" style="attribute"/>
+    <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="REQUEST_DATA" class="com.sysdelphia.bindings.mismo.ENVELOPEREQUESTDATAType"></mapping>
+  <mapping name="REQUEST_GROUP" class="com.sysdelphia.bindings.mismo.ENVELOPEREQUESTGROUPType">
+    <collection field="requestinGPARTYList">
+      <structure map-as="com.sysdelphia.bindings.mismo.ENVELOPEREQUESTINGPARTYType"></structure>
+    </collection>
+    <collection field="receivinGPARTYList">
+      <structure map-as="com.sysdelphia.bindings.mismo.ENVELOPERECEIVINGPARTYType"></structure>
+    </collection>
+    <collection field="submittinGPARTYList">
+      <structure name="SUBMITTING_PARTY" type="com.sysdelphia.bindings.mismo.ENVELOPESUBMITTINGPARTYType"></structure>
+    </collection>
+    <collection field="requestList">
+      <structure map-as="com.sysdelphia.bindings.mismo.ENVELOPEREQUESTType"></structure>
+    </collection>
+    <structure name="Signature" field="signature" usage="optional" type="com.sysdelphia.bindings.w3.xmldsig.SignatureType"></structure>
+    <value name="MISMOVersionID" field="mismoVersionID" usage="optional" style="attribute"/>
+    <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="REQUEST" class="com.sysdelphia.bindings.mismo.ENVELOPEREQUESTType">
+    <collection field="keyList">
+      <structure name="KEY" type="com.sysdelphia.bindings.mismo.ENVELOPEKEYType"></structure>
+    </collection>
+    <collection field="requesTDATAList">
+      <structure map-as="com.sysdelphia.bindings.mismo.ENVELOPEREQUESTDATAType"></structure>
+    </collection>
+    <value name="RequestDatetime" field="requestDatetime" usage="optional" style="attribute"/>
+    <value name="InternalAccountIdentifier" field="internalAccountIdentifier" usage="optional" style="attribute"/>
+    <value name="LoginAccountIdentifier" field="loginAccountIdentifier" usage="optional" style="attribute"/>
+    <value name="LoginAccountPassword" field="loginAccountPassword" usage="optional" style="attribute"/>
+    <value name="RequestingPartyBranchIdentifier" field="requestingPartyBranchIdentifier" usage="optional" style="attribute"/>
+    <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="REQUESTING_PARTY" class="com.sysdelphia.bindings.mismo.ENVELOPEREQUESTINGPARTYType">
+    <collection field="contacTDETAILList">
+      <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.ENVELOPECONTACTDETAILType"></structure>
+    </collection>
+    <collection field="preferreDRESPONSEList">
+      <structure map-as="com.sysdelphia.bindings.mismo.ENVELOPEPREFERREDRESPONSEType"></structure>
+    </collection>
+    <value name="_Name" field="_Name" usage="optional" style="attribute"/>
+    <value name="_StreetAddress" field="_StreetAddress" usage="optional" style="attribute"/>
+    <value name="_StreetAddress2" field="_StreetAddress2" usage="optional" style="attribute"/>
+    <value name="_City" field="_City" usage="optional" style="attribute"/>
+    <value name="_State" field="_State" usage="optional" style="attribute"/>
+    <value name="_PostalCode" field="_PostalCode" usage="optional" style="attribute"/>
+    <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
+    <value name="_TransactionIdentifier" field="_TransactionIdentifier" usage="optional" style="attribute"/>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping class="com.sysdelphia.bindings.mismo.ENVELOPESUBMITTINGPARTYType" abstract="true">
+    <collection field="contacTDETAILList">
+      <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.ENVELOPECONTACTDETAILType"></structure>
+    </collection>
+    <value name="_SequenceIdentifier" field="_SequenceIdentifier" usage="optional" style="attribute"/>
+    <value name="_Name" field="_Name" usage="optional" style="attribute"/>
+    <value name="_StreetAddress" field="_StreetAddress" usage="optional" style="attribute"/>
+    <value name="_StreetAddress2" field="_StreetAddress2" usage="optional" style="attribute"/>
+    <value name="_City" field="_City" usage="optional" style="attribute"/>
+    <value name="_State" field="_State" usage="optional" style="attribute"/>
+    <value name="_PostalCode" field="_PostalCode" usage="optional" style="attribute"/>
+    <value name="LoginAccountIdentifier" field="loginAccountIdentifier" usage="optional" style="attribute"/>
+    <value name="LoginAccountPassword" field="loginAccountPassword" usage="optional" style="attribute"/>
+    <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
+    <value name="_TransactionIdentifier" field="_TransactionIdentifier" usage="optional" style="attribute"/>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="CanonicalizationMethod" class="com.sysdelphia.bindings.w3.xmldsig.CanonicalizationMethodType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+    <value name="Algorithm" field="algorithm" usage="required" style="attribute"/>
+  </mapping>
+  <mapping name="DateTimeStamp" class="com.sysdelphia.bindings.w3.xmldsig.DateTimeStampType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <value name="DateTime" field="dateTime" usage="required" style="attribute"/>
+  </mapping>
+  <mapping name="DigestMethod" class="com.sysdelphia.bindings.w3.xmldsig.DigestMethodType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+    <value name="Algorithm" field="algorithm" usage="required" style="attribute"/>
+  </mapping>
+  <mapping name="DigestValue" class="com.sysdelphia.bindings.w3.xmldsig.DigestValueType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="DSAKeyValue" class="com.sysdelphia.bindings.w3.xmldsig.DSAKeyValueType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <structure field="p" usage="required" map-as="com.sysdelphia.bindings.w3.xmldsig.PType"></structure>
+    <structure field="q" usage="required" map-as="com.sysdelphia.bindings.w3.xmldsig.QType"></structure>
+    <structure field="g" usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.GType"></structure>
+    <structure field="y" usage="required" map-as="com.sysdelphia.bindings.w3.xmldsig.YType"></structure>
+    <structure field="j" usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.JType"></structure>
+    <structure field="seed" usage="required" map-as="com.sysdelphia.bindings.w3.xmldsig.SeedType"></structure>
+    <structure field="pgenCounter" usage="required" map-as="com.sysdelphia.bindings.w3.xmldsig.PgenCounterType"></structure>
+  </mapping>
+  <mapping name="Exponent" class="com.sysdelphia.bindings.w3.xmldsig.ExponentType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="G" class="com.sysdelphia.bindings.w3.xmldsig.GType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="HMACOutputLength" class="com.sysdelphia.bindings.w3.xmldsig.HMACOutputLengthType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="J" class="com.sysdelphia.bindings.w3.xmldsig.JType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="KeyInfo" class="com.sysdelphia.bindings.w3.xmldsig.KeyInfoType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false">
+      <structure usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.KeyNameType"></structure>
+      <structure usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.KeyValueType"></structure>
+      <structure usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.RetrievalMethodType"></structure>
+      <structure usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.X509DataType"></structure>
+      <structure usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.PGPDataType"></structure>
+      <structure usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.SPKIDataType"></structure>
+      <structure usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.MgmtDataType"></structure>
+    </collection>
+    <value name="Id" field="id" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="KeyName" class="com.sysdelphia.bindings.w3.xmldsig.KeyNameType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="KeyValue" class="com.sysdelphia.bindings.w3.xmldsig.KeyValueType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false">
+      <structure usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.DSAKeyValueType"></structure>
+      <structure usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.RSAKeyValueType"></structure>
+    </collection>
+  </mapping>
+  <mapping name="Manifest" class="com.sysdelphia.bindings.w3.xmldsig.ManifestType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="referenceList">
+      <structure name="Reference" type="com.sysdelphia.bindings.w3.xmldsig.ReferenceType"></structure>
+    </collection>
+    <value name="Id" field="id" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="MgmtData" class="com.sysdelphia.bindings.w3.xmldsig.MgmtDataType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="Modulus" class="com.sysdelphia.bindings.w3.xmldsig.ModulusType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="Object" class="com.sysdelphia.bindings.w3.xmldsig.ObjectType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false">
+      <structure name="Signature" usage="optional" type="com.sysdelphia.bindings.w3.xmldsig.SignatureType"></structure>
+      <structure usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.SignaturePropertiesType"></structure>
+      <structure usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.ManifestType"></structure>
+    </collection>
+    <value name="Id" field="id" usage="optional" style="attribute"/>
+    <value name="MimeType" field="mimeType" usage="optional" style="attribute"/>
+    <value name="Encoding" field="encoding" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="P" class="com.sysdelphia.bindings.w3.xmldsig.PType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="PgenCounter" class="com.sysdelphia.bindings.w3.xmldsig.PgenCounterType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="PGPData" class="com.sysdelphia.bindings.w3.xmldsig.PGPDataType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+  </mapping>
+  <mapping name="PGPKeyID_Type" class="com.sysdelphia.bindings.w3.xmldsig.PGPKeyIDType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="PGPKeyPacket_Type" class="com.sysdelphia.bindings.w3.xmldsig.PGPKeyPacketType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="Q" class="com.sysdelphia.bindings.w3.xmldsig.QType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping class="com.sysdelphia.bindings.w3.xmldsig.ReferenceType" abstract="true">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <structure name="Transforms" field="transforms" usage="optional" type="com.sysdelphia.bindings.w3.xmldsig.TransformsType"></structure>
+    <structure field="digestMethod" usage="required" map-as="com.sysdelphia.bindings.w3.xmldsig.DigestMethodType"></structure>
+    <structure field="digestValue" usage="required" map-as="com.sysdelphia.bindings.w3.xmldsig.DigestValueType"></structure>
+    <value name="Id" field="id" usage="optional" style="attribute"/>
+    <value name="URI" field="uri" usage="optional" style="attribute"/>
+    <value name="Type" field="type" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="RetrievalMethod" class="com.sysdelphia.bindings.w3.xmldsig.RetrievalMethodType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <structure name="Transforms" field="transforms" usage="optional" type="com.sysdelphia.bindings.w3.xmldsig.TransformsType"></structure>
+    <value name="URI" field="uri" usage="required" style="attribute"/>
+    <value name="Type" field="type" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="RSAKeyValue" class="com.sysdelphia.bindings.w3.xmldsig.RSAKeyValueType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <structure field="modulus" usage="required" map-as="com.sysdelphia.bindings.w3.xmldsig.ModulusType"></structure>
+    <structure field="exponent" usage="required" map-as="com.sysdelphia.bindings.w3.xmldsig.ExponentType"></structure>
+  </mapping>
+  <mapping name="Seed" class="com.sysdelphia.bindings.w3.xmldsig.SeedType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping class="com.sysdelphia.bindings.w3.xmldsig.SignatureType" abstract="true">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <structure field="signedInfo" usage="required" map-as="com.sysdelphia.bindings.w3.xmldsig.SignedInfoType"></structure>
+    <structure field="signatureValue" usage="required" map-as="com.sysdelphia.bindings.w3.xmldsig.SignatureValueType"></structure>
+    <structure field="keyInfo" usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.KeyInfoType"></structure>
+    <collection field="objectList">
+      <structure map-as="com.sysdelphia.bindings.w3.xmldsig.ObjectType"></structure>
+    </collection>
+    <value name="Id" field="id" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="SignatureMethod" class="com.sysdelphia.bindings.w3.xmldsig.SignatureMethodType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false">
+      <structure usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.HMACOutputLengthType"></structure>
+    </collection>
+    <value name="Algorithm" field="algorithm" usage="required" style="attribute"/>
+  </mapping>
+  <mapping name="SignatureProperties" class="com.sysdelphia.bindings.w3.xmldsig.SignaturePropertiesType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="signaturePropertyList">
+      <structure map-as="com.sysdelphia.bindings.w3.xmldsig.SignaturePropertyType"></structure>
+    </collection>
+    <value name="Id" field="id" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="SignatureProperty" class="com.sysdelphia.bindings.w3.xmldsig.SignaturePropertyType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false">
+      <structure usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.DateTimeStampType"></structure>
+    </collection>
+    <value name="Target" field="target" usage="required" style="attribute"/>
+    <value name="Id" field="id" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="SignatureValue" class="com.sysdelphia.bindings.w3.xmldsig.SignatureValueType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+    <value name="Id" field="id" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="SignedInfo" class="com.sysdelphia.bindings.w3.xmldsig.SignedInfoType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <structure field="canonicalizationMethod" usage="required" map-as="com.sysdelphia.bindings.w3.xmldsig.CanonicalizationMethodType"></structure>
+    <structure field="signatureMethod" usage="required" map-as="com.sysdelphia.bindings.w3.xmldsig.SignatureMethodType"></structure>
+    <collection field="referenceList">
+      <structure name="Reference" type="com.sysdelphia.bindings.w3.xmldsig.ReferenceType"></structure>
+    </collection>
+    <value name="Id" field="id" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="SPKIData" class="com.sysdelphia.bindings.w3.xmldsig.SPKIDataType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <structure field="spkiSexp" usage="required" map-as="com.sysdelphia.bindings.w3.xmldsig.SPKISexpType"></structure>
+  </mapping>
+  <mapping name="SPKISexp" class="com.sysdelphia.bindings.w3.xmldsig.SPKISexpType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="Transform" class="com.sysdelphia.bindings.w3.xmldsig.TransformType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false">
+      <structure usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.XPathType"></structure>
+    </collection>
+    <value name="Algorithm" field="algorithm" usage="required" style="attribute"/>
+  </mapping>
+  <mapping class="com.sysdelphia.bindings.w3.xmldsig.TransformsType" abstract="true">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="transformList">
+      <structure map-as="com.sysdelphia.bindings.w3.xmldsig.TransformType"></structure>
+    </collection>
+  </mapping>
+  <mapping name="X509Certificate" class="com.sysdelphia.bindings.w3.xmldsig.X509CertificateType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="X509CRL" class="com.sysdelphia.bindings.w3.xmldsig.X509CRLType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="X509Data" class="com.sysdelphia.bindings.w3.xmldsig.X509DataType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false">
+      <structure usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.X509IssuerSerialType"></structure>
+      <structure usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.X509SKIType"></structure>
+      <structure usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.X509SubjectNameType"></structure>
+      <structure usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.X509CertificateType"></structure>
+      <structure usage="optional" map-as="com.sysdelphia.bindings.w3.xmldsig.X509CRLType"></structure>
+    </collection>
+  </mapping>
+  <mapping name="X509IssuerName" class="com.sysdelphia.bindings.w3.xmldsig.X509IssuerNameType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="X509IssuerSerial" class="com.sysdelphia.bindings.w3.xmldsig.X509IssuerSerialType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <structure field="x509IssuerName" usage="required" map-as="com.sysdelphia.bindings.w3.xmldsig.X509IssuerNameType"></structure>
+    <structure field="x509SerialNumber" usage="required" map-as="com.sysdelphia.bindings.w3.xmldsig.X509SerialNumberType"></structure>
+  </mapping>
+  <mapping name="X509SerialNumber" class="com.sysdelphia.bindings.w3.xmldsig.X509SerialNumberType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="X509SKI" class="com.sysdelphia.bindings.w3.xmldsig.X509SKIType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="X509SubjectName" class="com.sysdelphia.bindings.w3.xmldsig.X509SubjectNameType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="XPath" class="com.sysdelphia.bindings.w3.xmldsig.XPathType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="Y" class="com.sysdelphia.bindings.w3.xmldsig.YType">
+    <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
+    <collection field="choiceList" ordered="false"></collection>
+  </mapping>
+  <mapping name="RESPOND_TO_PARTY" class="com.sysdelphia.bindings.mismo.ENVELOPERESPONDTOPARTYType">
+    <collection field="contacTDETAILList">
+      <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.ENVELOPECONTACTDETAILType"></structure>
+    </collection>
+    <value name="_Name" field="_Name" usage="optional" style="attribute"/>
+    <value name="_StreetAddress" field="_StreetAddress" usage="optional" style="attribute"/>
+    <value name="_StreetAddress2" field="_StreetAddress2" usage="optional" style="attribute"/>
+    <value name="_City" field="_City" usage="optional" style="attribute"/>
+    <value name="_State" field="_State" usage="optional" style="attribute"/>
+    <value name="_PostalCode" field="_PostalCode" usage="optional" style="attribute"/>
+    <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
+    <value name="_TransactionIdentifier" field="_TransactionIdentifier" usage="optional" style="attribute"/>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="RESPONDING_PARTY" class="com.sysdelphia.bindings.mismo.ENVELOPERESPONDINGPARTYType">
+    <collection field="contacTDETAILList">
+      <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.ENVELOPECONTACTDETAILType"></structure>
+    </collection>
+    <value name="_Name" field="_Name" usage="optional" style="attribute"/>
+    <value name="_StreetAddress" field="_StreetAddress" usage="optional" style="attribute"/>
+    <value name="_StreetAddress2" field="_StreetAddress2" usage="optional" style="attribute"/>
+    <value name="_City" field="_City" usage="optional" style="attribute"/>
+    <value name="_State" field="_State" usage="optional" style="attribute"/>
+    <value name="_PostalCode" field="_PostalCode" usage="optional" style="attribute"/>
+    <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
+    <value name="_TransactionIdentifier" field="_TransactionIdentifier" usage="optional" style="attribute"/>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="RESPONSE_DATA" class="com.sysdelphia.bindings.mismo.ENVELOPERESPONSEDATAType"></mapping>
+  <mapping name="ENVELOPE_RESPONSE_GROUP_Type" class="com.sysdelphia.bindings.mismo.ENVELOPERESPONSEGROUPType">
+    <structure field="respondinGPARTY" usage="required" map-as="com.sysdelphia.bindings.mismo.ENVELOPERESPONDINGPARTYType"></structure>
+    <collection field="submittinGPARTYList">
+      <structure name="SUBMITTING_PARTY" type="com.sysdelphia.bindings.mismo.ENVELOPESUBMITTINGPARTYType"></structure>
+    </collection>
+    <structure field="responDTOPARTY" usage="required" map-as="com.sysdelphia.bindings.mismo.ENVELOPERESPONDTOPARTYType"></structure>
+    <collection field="responseList">
+      <structure map-as="com.sysdelphia.bindings.mismo.ENVELOPERESPONSEType"></structure>
+    </collection>
+    <structure name="Signature" field="signature" usage="optional" type="com.sysdelphia.bindings.w3.xmldsig.SignatureType"></structure>
+    <value name="MISMOVersionID" field="mismoVersionID" usage="optional" style="attribute"/>
+    <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="RESPONSE" class="com.sysdelphia.bindings.mismo.ENVELOPERESPONSEType">
+    <collection field="keyList">
+      <structure name="KEY" type="com.sysdelphia.bindings.mismo.ENVELOPEKEYType"></structure>
+    </collection>
+    <collection field="responsEDATAList">
+      <structure map-as="com.sysdelphia.bindings.mismo.ENVELOPERESPONSEDATAType"></structure>
+    </collection>
+    <collection field="statusList">
+      <structure map-as="com.sysdelphia.bindings.mismo.ENVELOPESTATUSType"></structure>
+    </collection>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="ResponseDateTime" field="responseDateTime" usage="optional" style="attribute"/>
+    <value name="InternalAccountIdentifier" field="internalAccountIdentifier" usage="optional" style="attribute"/>
+    <value name="LoginAccountIdentifier" field="loginAccountIdentifier" usage="optional" style="attribute"/>
+    <value name="LoginAccountPassword" field="loginAccountPassword" usage="optional" style="attribute"/>
+    <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="STATUS" class="com.sysdelphia.bindings.mismo.ENVELOPESTATUSType">
+    <value name="_Condition" field="_Condition" usage="optional" style="attribute"/>
+    <value name="_Code" field="_Code" usage="optional" style="attribute"/>
+    <value name="_Name" field="_Name" usage="optional" style="attribute"/>
+    <value name="_Description" field="_Description" usage="optional" style="attribute"/>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+  </mapping>
+</binding>

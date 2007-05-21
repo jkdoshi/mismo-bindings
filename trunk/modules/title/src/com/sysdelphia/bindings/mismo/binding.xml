@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<binding>
+  <mapping name="AUTHORIZED_REPRESENTATIVE" class="com.sysdelphia.bindings.mismo.TITLEAUTHORIZEDREPRESENTATIVEType">
+    <structure name="CONTACT_DETAIL" field="contacTDETAIL" usage="optional" type="com.sysdelphia.bindings.mismo.TITLECONTACTDETAILType"></structure>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_UnparsedName" field="_UnparsedName" usage="optional" style="attribute"/>
+    <value name="_TitleDescription" field="_TitleDescription" usage="optional" style="attribute"/>
+    <value name="AuthorizedToSignIndicator" field="authorizedToSignIndicator" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="_ALIAS" class="com.sysdelphia.bindings.mismo.TITLEBORROWERALIASType">
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_OrganizationName" field="_OrganizationName" usage="optional" style="attribute"/>
+    <value name="_FirstName" field="_FirstName" usage="optional" style="attribute"/>
+    <value name="_LastName" field="_LastName" usage="optional" style="attribute"/>
+    <value name="_MiddleName" field="_MiddleName" usage="optional" style="attribute"/>
+    <value name="_NameSuffix" field="_NameSuffix" usage="optional" style="attribute"/>
+    <value name="_UnparsedName" field="_UnparsedName" usage="optional" style="attribute"/>
+    <value name="_Type" field="_Type" usage="optional" style="attribute"/>
+    <value name="_TypeOtherDescription" field="_TypeOtherDescription" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="_RESIDENCE" class="com.sysdelphia.bindings.mismo.TITLEBORROWERRESIDENCEType">
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_StreetAddress" field="_StreetAddress" usage="optional" style="attribute"/>
+    <value name="_City" field="_City" usage="optional" style="attribute"/>
+    <value name="_State" field="_State" usage="optional" style="attribute"/>
+    <value name="_PostalCode" field="_PostalCode" usage="optional" style="attribute"/>
+    <value name="_Country" field="_Country" usage="optional" style="attribute"/>
+    <value name="BorrowerResidencyBasisType" field="borrowerResidencyBasisType" usage="optional" style="attribute"/>
+    <value name="BorrowerResidencyDurationMonths" field="borrowerResidencyDurationMonths" usage="optional" style="attribute"/>
+    <value name="BorrowerResidencyDurationYears" field="borrowerResidencyDurationYears" usage="optional" style="attribute"/>
+    <value name="BorrowerResidencyType" field="borrowerResidencyType" usage="optional" style="attribute"/>
+    <value name="_StreetAddress2" field="_StreetAddress2" usage="optional" style="attribute"/>
+    <value name="_County" field="_County" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="BORROWER" class="com.sysdelphia.bindings.mismo.TITLEBORROWERType">
+    <collection field="_ALIASList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLEBORROWERALIASType"></structure>
+    </collection>
+    <collection field="_RESIDENCEList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLEBORROWERRESIDENCEType"></structure>
+    </collection>
+    <collection field="noNPERSONENTITYDETAILList">
+      <structure name="NON_PERSON_ENTITY_DETAIL" type="com.sysdelphia.bindings.mismo.TITLENONPERSONENTITYDETAILType"></structure>
+    </collection>
+    <collection field="contacTPOINTList">
+      <structure name="CONTACT_POINT" type="com.sysdelphia.bindings.mismo.TITLECONTACTPOINTType"></structure>
+    </collection>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_SequenceIdentifier" field="_SequenceIdentifier" usage="optional" style="attribute"/>
+    <value name="NonPersonEntityIndicator" field="nonPersonEntityIndicator" usage="optional" style="attribute"/>
+    <value name="_FirstName" field="_FirstName" usage="optional" style="attribute"/>
+    <value name="_MiddleName" field="_MiddleName" usage="optional" style="attribute"/>
+    <value name="_LastName" field="_LastName" usage="optional" style="attribute"/>
+    <value name="_NameSuffix" field="_NameSuffix" usage="optional" style="attribute"/>
+    <value name="_UnparsedName" field="_UnparsedName" usage="optional" style="attribute"/>
+    <value name="_SSN" field="_SSN" usage="optional" style="attribute"/>
+    <value name="MaritalStatusType" field="maritalStatusType" usage="optional" style="attribute"/>
+    <value name="_USATaxPayerIdentificationNumber" field="_USATaxPayerIdentificationNumber" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping class="com.sysdelphia.bindings.mismo.TITLECONTACTDETAILType" abstract="true">
+    <collection field="contacTPOINTList">
+      <structure name="CONTACT_POINT" type="com.sysdelphia.bindings.mismo.TITLECONTACTPOINTType"></structure>
+    </collection>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_Name" field="_Name" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping class="com.sysdelphia.bindings.mismo.TITLECONTACTPOINTType" abstract="true">
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_RoleType" field="_RoleType" usage="optional" style="attribute"/>
+    <value name="_Type" field="_Type" usage="optional" style="attribute"/>
+    <value name="_TypeOtherDescription" field="_TypeOtherDescription" usage="optional" style="attribute"/>
+    <value name="_Value" field="_Value" usage="optional" style="attribute"/>
+    <value name="_PreferenceIndicator" field="_PreferenceIndicator" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="DOCUMENT" class="com.sysdelphia.bindings.mismo.TITLEDOCUMENTType"></mapping>
+  <mapping name="EMBEDDED_FILE" class="com.sysdelphia.bindings.mismo.TITLEEMBEDDEDFILEType">
+    <collection field="documentList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLEDOCUMENTType"></structure>
+    </collection>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_Name" field="_Name" usage="optional" style="attribute"/>
+    <value name="_Description" field="_Description" usage="optional" style="attribute"/>
+    <value name="_Extension" field="_Extension" usage="optional" style="attribute"/>
+    <value name="_Version" field="_Version" usage="optional" style="attribute"/>
+    <value name="_EncodingType" field="_EncodingType" usage="optional" style="attribute"/>
+    <value name="MIMEType" field="mimeType" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="EXECUTION" class="com.sysdelphia.bindings.mismo.TITLEEXECUTIONType">
+    <collection field="contacTDETAILList">
+      <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.TITLECONTACTDETAILType"></structure>
+    </collection>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_StreetAddress" field="_StreetAddress" usage="optional" style="attribute"/>
+    <value name="_StreetAddress2" field="_StreetAddress2" usage="optional" style="attribute"/>
+    <value name="_City" field="_City" usage="optional" style="attribute"/>
+    <value name="_State" field="_State" usage="optional" style="attribute"/>
+    <value name="_County" field="_County" usage="optional" style="attribute"/>
+    <value name="_PostalCode" field="_PostalCode" usage="optional" style="attribute"/>
+    <value name="_Date" field="_Date" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping class="com.sysdelphia.bindings.mismo.TITLEKEYType" abstract="true">
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_Name" field="_Name" usage="optional" style="attribute"/>
+    <value name="_Value" field="_Value" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="LENDER" class="com.sysdelphia.bindings.mismo.TITLELENDERType">
+    <structure name="CONTACT_DETAIL" field="contacTDETAIL" usage="optional" type="com.sysdelphia.bindings.mismo.TITLECONTACTDETAILType"></structure>
+    <collection field="noNPERSONENTITYDETAILList">
+      <structure name="NON_PERSON_ENTITY_DETAIL" type="com.sysdelphia.bindings.mismo.TITLENONPERSONENTITYDETAILType"></structure>
+    </collection>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
+    <value name="NonPersonEntityIndicator" field="nonPersonEntityIndicator" usage="optional" style="attribute"/>
+    <value name="_UnparsedName" field="_UnparsedName" usage="optional" style="attribute"/>
+    <value name="_StreetAddress" field="_StreetAddress" usage="optional" style="attribute"/>
+    <value name="_StreetAddress2" field="_StreetAddress2" usage="optional" style="attribute"/>
+    <value name="_City" field="_City" usage="optional" style="attribute"/>
+    <value name="_State" field="_State" usage="optional" style="attribute"/>
+    <value name="_County" field="_County" usage="optional" style="attribute"/>
+    <value name="_PostalCode" field="_PostalCode" usage="optional" style="attribute"/>
+    <value name="_Country" field="_Country" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="LOAN_PURPOSE" class="com.sysdelphia.bindings.mismo.TITLELOANPURPOSEType">
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="GSETitleMannerHeldDescription" field="gseTitleMannerHeldDescription" usage="optional" style="attribute"/>
+    <value name="_Type" field="_Type" usage="optional" style="attribute"/>
+    <value name="OtherLoanPurposeDescription" field="otherLoanPurposeDescription" usage="optional" style="attribute"/>
+    <value name="PropertyLeaseholdExpirationDate" field="propertyLeaseholdExpirationDate" usage="optional" style="attribute"/>
+    <value name="PropertyRightsType" field="propertyRightsType" usage="optional" style="attribute"/>
+    <value name="PropertyRightsTypeOtherDescription" field="propertyRightsTypeOtherDescription" usage="optional" style="attribute"/>
+    <value name="PropertyUsageType" field="propertyUsageType" usage="optional" style="attribute"/>
+    <value name="PropertyUsageTypeOtherDescription" field="propertyUsageTypeOtherDescription" usage="optional" style="attribute"/>
+    <value name="EstimatedCashOutAmount" field="estimatedCashOutAmount" usage="optional" style="attribute"/>
+    <value name="RefinanceCashOutDeterminationType" field="refinanceCashOutDeterminationType" usage="optional" style="attribute"/>
+    <value name="MortgageModificationIndicator" field="mortgageModificationIndicator" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="MORTGAGE_TERMS" class="com.sysdelphia.bindings.mismo.TITLEMORTGAGETERMSType">
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="AgencyCaseIdentifier" field="agencyCaseIdentifier" usage="optional" style="attribute"/>
+    <value name="BaseLoanAmount" field="baseLoanAmount" usage="optional" style="attribute"/>
+    <value name="BorrowerRequestedLoanAmount" field="borrowerRequestedLoanAmount" usage="optional" style="attribute"/>
+    <value name="LenderCaseIdentifier" field="lenderCaseIdentifier" usage="optional" style="attribute"/>
+    <value name="MortgageType" field="mortgageType" usage="optional" style="attribute"/>
+    <value name="MortgageTypeOtherDescription" field="mortgageTypeOtherDescription" usage="optional" style="attribute"/>
+    <value name="LoanEstimatedClosingDate" field="loanEstimatedClosingDate" usage="optional" style="attribute"/>
+    <value name="LienPriorityType" field="lienPriorityType" usage="optional" style="attribute"/>
+    <value name="LienPriorityTypeOtherDescription" field="lienPriorityTypeOtherDescription" usage="optional" style="attribute"/>
+    <value name="LoanAmortizationType" field="loanAmortizationType" usage="optional" style="attribute"/>
+    <value name="OtherAmortizationTypeDescription" field="otherAmortizationTypeDescription" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping class="com.sysdelphia.bindings.mismo.TITLENONPERSONENTITYDETAILType" abstract="true">
+    <collection field="authorizeDREPRESENTATIVEList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLEAUTHORIZEDREPRESENTATIVEType"></structure>
+    </collection>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_OrganizationType" field="_OrganizationType" usage="optional" style="attribute"/>
+    <value name="_OrganizationTypeOtherDescription" field="_OrganizationTypeOtherDescription" usage="optional" style="attribute"/>
+    <value name="_OrganizedUnderTheLawsOfJurisdictionName" field="_OrganizedUnderTheLawsOfJurisdictionName" usage="optional" style="attribute"/>
+    <value name="_SuccessorClauseTextDescription" field="_SuccessorClauseTextDescription" usage="optional" style="attribute"/>
+    <value name="_TaxIdentificationNumberIdentifier" field="_TaxIdentificationNumberIdentifier" usage="optional" style="attribute"/>
+    <value name="_OrganizationLicensingTypeDescription" field="_OrganizationLicensingTypeDescription" usage="optional" style="attribute"/>
+    <value name="MERSOrganizationIdentifier" field="mersOrganizationIdentifier" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="PARCEL_IDENTIFICATION" class="com.sysdelphia.bindings.mismo.TITLEPARCELIDENTIFICATIONType">
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_Type" field="_Type" usage="optional" style="attribute"/>
+    <value name="_TypeOtherDescription" field="_TypeOtherDescription" usage="optional" style="attribute"/>
+    <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="PARSED_STREET_ADDRESS" class="com.sysdelphia.bindings.mismo.TITLEPARSEDSTREETADDRESSType">
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_StreetName" field="_StreetName" usage="optional" style="attribute"/>
+    <value name="_DirectionPrefix" field="_DirectionPrefix" usage="optional" style="attribute"/>
+    <value name="_DirectionSuffix" field="_DirectionSuffix" usage="optional" style="attribute"/>
+    <value name="_StreetSuffix" field="_StreetSuffix" usage="optional" style="attribute"/>
+    <value name="_HouseNumber" field="_HouseNumber" usage="optional" style="attribute"/>
+    <value name="_ApartmentOrUnit" field="_ApartmentOrUnit" usage="optional" style="attribute"/>
+    <value name="_RuralRoute" field="_RuralRoute" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="PAYEE" class="com.sysdelphia.bindings.mismo.TITLEPAYEEType">
+    <structure name="CONTACT_DETAIL" field="contacTDETAIL" usage="optional" type="com.sysdelphia.bindings.mismo.TITLECONTACTDETAILType"></structure>
+    <collection field="noNPERSONENTITYDETAILList">
+      <structure name="NON_PERSON_ENTITY_DETAIL" type="com.sysdelphia.bindings.mismo.TITLENONPERSONENTITYDETAILType"></structure>
+    </collection>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_UnparsedName" field="_UnparsedName" usage="optional" style="attribute"/>
+    <value name="_StreetAddress" field="_StreetAddress" usage="optional" style="attribute"/>
+    <value name="_StreetAddress2" field="_StreetAddress2" usage="optional" style="attribute"/>
+    <value name="_City" field="_City" usage="optional" style="attribute"/>
+    <value name="_State" field="_State" usage="optional" style="attribute"/>
+    <value name="_County" field="_County" usage="optional" style="attribute"/>
+    <value name="_PostalCode" field="_PostalCode" usage="optional" style="attribute"/>
+    <value name="_Country" field="_Country" usage="optional" style="attribute"/>
+    <value name="_NonPersonEntityIndicator" field="_NonPersonEntityIndicator" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="PAYOFF" class="com.sysdelphia.bindings.mismo.TITLEPAYOFFType">
+    <collection field="payeeList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLEPAYEEType"></structure>
+    </collection>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_SequenceIdentifier" field="_SequenceIdentifier" usage="optional" style="attribute"/>
+    <value name="_ActionType" field="_ActionType" usage="optional" style="attribute"/>
+    <value name="_ActionTypeOtherDescription" field="_ActionTypeOtherDescription" usage="optional" style="attribute"/>
+    <value name="_AccountNumberIdentifier" field="_AccountNumberIdentifier" usage="optional" style="attribute"/>
+    <value name="_Amount" field="_Amount" usage="optional" style="attribute"/>
+    <value name="LiabilityType" field="liabilityType" usage="optional" style="attribute"/>
+    <value name="LiabilityTypeOtherDescription" field="liabilityTypeOtherDescription" usage="optional" style="attribute"/>
+    <value name="LienPriorityType" field="lienPriorityType" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="PLATTED_LAND" class="com.sysdelphia.bindings.mismo.TITLEPLATTEDLANDType">
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="PropertyLotIdentifier" field="propertyLotIdentifier" usage="optional" style="attribute"/>
+    <value name="PropertyBlockIdentifier" field="propertyBlockIdentifier" usage="optional" style="attribute"/>
+    <value name="PropertySectionIdentifier" field="propertySectionIdentifier" usage="optional" style="attribute"/>
+    <value name="PropertySubdivisionIdentifier" field="propertySubdivisionIdentifier" usage="optional" style="attribute"/>
+    <value name="PropertyTractIdentifier" field="propertyTractIdentifier" usage="optional" style="attribute"/>
+    <value name="PlatName" field="platName" usage="optional" style="attribute"/>
+    <value name="_BuildingIdentifier" field="_BuildingIdentifier" usage="optional" style="attribute"/>
+    <value name="_PlatCodeIdentifier" field="_PlatCodeIdentifier" usage="optional" style="attribute"/>
+    <value name="_PlatInstrumentIdentifier" field="_PlatInstrumentIdentifier" usage="optional" style="attribute"/>
+    <value name="_UnitNumberIdentifier" field="_UnitNumberIdentifier" usage="optional" style="attribute"/>
+    <value name="RecordedDocumentBook" field="recordedDocumentBook" usage="optional" style="attribute"/>
+    <value name="RecordedDocumentPage" field="recordedDocumentPage" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping class="com.sysdelphia.bindings.mismo.TITLEPREFERREDRESPONSEType" abstract="true">
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_Format" field="_Format" usage="optional" style="attribute"/>
+    <value name="_Method" field="_Method" usage="optional" style="attribute"/>
+    <value name="_Destination" field="_Destination" usage="optional" style="attribute"/>
+    <value name="_FormatOtherDescription" field="_FormatOtherDescription" usage="optional" style="attribute"/>
+    <value name="_MethodOther" field="_MethodOther" usage="optional" style="attribute"/>
+    <value name="_UseEmbeddedFileIndicator" field="_UseEmbeddedFileIndicator" usage="optional" style="attribute"/>
+    <value name="MIMEType" field="mimeType" usage="optional" style="attribute"/>
+    <value name="_VersionIdentifier" field="_VersionIdentifier" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="_IDENTIFICATION" class="com.sysdelphia.bindings.mismo.TITLEPROPERTYIDENTIFICATIONType">
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="CountyFIPSCode" field="countyFIPSCode" usage="optional" style="attribute"/>
+    <value name="StateFIPSCode" field="stateFIPSCode" usage="optional" style="attribute"/>
+    <value name="LongitudeIdentifier" field="longitudeIdentifier" usage="optional" style="attribute"/>
+    <value name="LatitudeIdentifier" field="latitudeIdentifier" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="_LEGAL_DESCRIPTION" class="com.sysdelphia.bindings.mismo.TITLEPROPERTYLEGALDESCRIPTIONType">
+    <collection field="parceLIDENTIFICATIONList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLEPARCELIDENTIFICATIONType"></structure>
+    </collection>
+    <collection field="platteDLANDList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLEPLATTEDLANDType"></structure>
+    </collection>
+    <collection field="unplatteDLANDList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLEUNPLATTEDLANDType"></structure>
+    </collection>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_TextDescription" field="_TextDescription" usage="optional" style="attribute"/>
+    <value name="_Type" field="_Type" usage="optional" style="attribute"/>
+    <value name="_TypeOtherDescription" field="_TypeOtherDescription" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="PROPERTY" class="com.sysdelphia.bindings.mismo.TITLEPROPERTYType">
+    <structure field="_IDENTIFICATION" usage="optional" map-as="com.sysdelphia.bindings.mismo.TITLEPROPERTYIDENTIFICATIONType"></structure>
+    <structure field="_LEGALDESCRIPTION" usage="optional" map-as="com.sysdelphia.bindings.mismo.TITLEPROPERTYLEGALDESCRIPTIONType"></structure>
+    <structure field="parseDSTREETADDRESS" usage="optional" map-as="com.sysdelphia.bindings.mismo.TITLEPARSEDSTREETADDRESSType"></structure>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_SequenceIdentifier" field="_SequenceIdentifier" usage="optional" style="attribute"/>
+    <value name="_StreetAddress" field="_StreetAddress" usage="optional" style="attribute"/>
+    <value name="_StreetAddress2" field="_StreetAddress2" usage="optional" style="attribute"/>
+    <value name="_City" field="_City" usage="optional" style="attribute"/>
+    <value name="_State" field="_State" usage="optional" style="attribute"/>
+    <value name="_County" field="_County" usage="optional" style="attribute"/>
+    <value name="_PostalCode" field="_PostalCode" usage="optional" style="attribute"/>
+    <value name="_Country" field="_Country" usage="optional" style="attribute"/>
+    <value name="BuildingStatusType" field="buildingStatusType" usage="optional" style="attribute"/>
+    <value name="_TitleCategoryType" field="_TitleCategoryType" usage="optional" style="attribute"/>
+    <value name="_TitleCategoryTypeOtherDescription" field="_TitleCategoryTypeOtherDescription" usage="optional" style="attribute"/>
+    <value name="AssessorsParcelIdentifier" field="assessorsParcelIdentifier" usage="optional" style="attribute"/>
+    <value name="_SalesAmount" field="_SalesAmount" usage="optional" style="attribute"/>
+    <value name="_UnincorporatedAreaName" field="_UnincorporatedAreaName" usage="optional" style="attribute"/>
+    <value name="PropertyTitleMannerHeldType" field="propertyTitleMannerHeldType" usage="optional" style="attribute"/>
+    <value name="PropertyTitleMannerHeldTypeOtherDescription" field="propertyTitleMannerHeldTypeOtherDescription" usage="optional" style="attribute"/>
+    <value name="PlannedUnitDevelopmentIndicator" field="plannedUnitDevelopmentIndicator" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="REAL_ESTATE_AGENT" class="com.sysdelphia.bindings.mismo.TITLEREALESTATEAGENTType">
+    <collection field="contacTDETAILList">
+      <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.TITLECONTACTDETAILType"></structure>
+    </collection>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_Type" field="_Type" usage="optional" style="attribute"/>
+    <value name="_TypeOtherDescription" field="_TypeOtherDescription" usage="optional" style="attribute"/>
+    <value name="_UnparsedName" field="_UnparsedName" usage="optional" style="attribute"/>
+    <value name="_StreetAddress" field="_StreetAddress" usage="optional" style="attribute"/>
+    <value name="_StreetAddress2" field="_StreetAddress2" usage="optional" style="attribute"/>
+    <value name="_City" field="_City" usage="optional" style="attribute"/>
+    <value name="_State" field="_State" usage="optional" style="attribute"/>
+    <value name="_PostalCode" field="_PostalCode" usage="optional" style="attribute"/>
+    <value name="_County" field="_County" usage="optional" style="attribute"/>
+    <value name="_Country" field="_Country" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="RECEIVING_PARTY" class="com.sysdelphia.bindings.mismo.TITLERECEIVINGPARTYType">
+    <collection field="contacTDETAILList">
+      <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.TITLECONTACTDETAILType"></structure>
+    </collection>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_Name" field="_Name" usage="optional" style="attribute"/>
+    <value name="_StreetAddress" field="_StreetAddress" usage="optional" style="attribute"/>
+    <value name="_StreetAddress2" field="_StreetAddress2" usage="optional" style="attribute"/>
+    <value name="_City" field="_City" usage="optional" style="attribute"/>
+    <value name="_State" field="_State" usage="optional" style="attribute"/>
+    <value name="_PostalCode" field="_PostalCode" usage="optional" style="attribute"/>
+    <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="REQUEST_DATA" class="com.sysdelphia.bindings.mismo.TITLEREQUESTDATAType">
+    <collection field="titlEREQUESTList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLETITLEREQUESTType"></structure>
+    </collection>
+  </mapping>
+  <mapping name="TITLE_REQUEST_GROUP_Type" class="com.sysdelphia.bindings.mismo.TITLEREQUESTGROUPType">
+    <collection field="requestinGPARTYList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLEREQUESTINGPARTYType"></structure>
+    </collection>
+    <structure field="receivinGPARTY" usage="optional" map-as="com.sysdelphia.bindings.mismo.TITLERECEIVINGPARTYType"></structure>
+    <collection field="submittinGPARTYList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLESUBMITTINGPARTYType"></structure>
+    </collection>
+    <collection field="requestList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLEREQUESTType"></structure>
+    </collection>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="MISMOVersionID" field="mismoVersionID" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="REQUEST" class="com.sysdelphia.bindings.mismo.TITLEREQUESTType">
+    <collection field="keyList">
+      <structure name="KEY" type="com.sysdelphia.bindings.mismo.TITLEKEYType"></structure>
+    </collection>
+    <collection field="requesTDATAList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLEREQUESTDATAType"></structure>
+    </collection>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="RequestDatetime" field="requestDatetime" usage="optional" style="attribute"/>
+    <value name="InternalAccountIdentifier" field="internalAccountIdentifier" usage="optional" style="attribute"/>
+    <value name="LoginAccountIdentifier" field="loginAccountIdentifier" usage="optional" style="attribute"/>
+    <value name="LoginAccountPassword" field="loginAccountPassword" usage="optional" style="attribute"/>
+    <value name="RequestingPartyBranchIdentifier" field="requestingPartyBranchIdentifier" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="REQUESTING_PARTY" class="com.sysdelphia.bindings.mismo.TITLEREQUESTINGPARTYType">
+    <collection field="contacTDETAILList">
+      <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.TITLECONTACTDETAILType"></structure>
+    </collection>
+    <collection field="preferreDRESPONSEList">
+      <structure name="PREFERRED_RESPONSE" type="com.sysdelphia.bindings.mismo.TITLEPREFERREDRESPONSEType"></structure>
+    </collection>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_Name" field="_Name" usage="optional" style="attribute"/>
+    <value name="_StreetAddress" field="_StreetAddress" usage="optional" style="attribute"/>
+    <value name="_StreetAddress2" field="_StreetAddress2" usage="optional" style="attribute"/>
+    <value name="_City" field="_City" usage="optional" style="attribute"/>
+    <value name="_State" field="_State" usage="optional" style="attribute"/>
+    <value name="_PostalCode" field="_PostalCode" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="SELLER" class="com.sysdelphia.bindings.mismo.TITLESELLERType">
+    <structure name="CONTACT_DETAIL" field="contacTDETAIL" usage="optional" type="com.sysdelphia.bindings.mismo.TITLECONTACTDETAILType"></structure>
+    <collection field="noNPERSONENTITYDETAILList">
+      <structure name="NON_PERSON_ENTITY_DETAIL" type="com.sysdelphia.bindings.mismo.TITLENONPERSONENTITYDETAILType"></structure>
+    </collection>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
+    <value name="_OrganizationName" field="_OrganizationName" usage="optional" style="attribute"/>
+    <value name="NonPersonEntityIndicator" field="nonPersonEntityIndicator" usage="optional" style="attribute"/>
+    <value name="_FirstName" field="_FirstName" usage="optional" style="attribute"/>
+    <value name="_MiddleName" field="_MiddleName" usage="optional" style="attribute"/>
+    <value name="_LastName" field="_LastName" usage="optional" style="attribute"/>
+    <value name="_NameSuffix" field="_NameSuffix" usage="optional" style="attribute"/>
+    <value name="_UnparsedName" field="_UnparsedName" usage="optional" style="attribute"/>
+    <value name="_StreetAddress" field="_StreetAddress" usage="optional" style="attribute"/>
+    <value name="_StreetAddress2" field="_StreetAddress2" usage="optional" style="attribute"/>
+    <value name="_City" field="_City" usage="optional" style="attribute"/>
+    <value name="_State" field="_State" usage="optional" style="attribute"/>
+    <value name="_PostalCode" field="_PostalCode" usage="optional" style="attribute"/>
+    <value name="_Country" field="_Country" usage="optional" style="attribute"/>
+    <value name="_County" field="_County" usage="optional" style="attribute"/>
+    <value name="_SSN" field="_SSN" usage="optional" style="attribute"/>
+    <value name="_USATaxPayerIdentificationNumber" field="_USATaxPayerIdentificationNumber" usage="optional" style="attribute"/>
+    <value name="MaritalStatusType" field="maritalStatusType" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="SUBMITTING_PARTY" class="com.sysdelphia.bindings.mismo.TITLESUBMITTINGPARTYType">
+    <collection field="contacTDETAILList">
+      <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.TITLECONTACTDETAILType"></structure>
+    </collection>
+    <collection field="preferreDRESPONSEList">
+      <structure name="PREFERRED_RESPONSE" type="com.sysdelphia.bindings.mismo.TITLEPREFERREDRESPONSEType"></structure>
+    </collection>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_SequenceIdentifier" field="_SequenceIdentifier" usage="optional" style="attribute"/>
+    <value name="_Name" field="_Name" usage="optional" style="attribute"/>
+    <value name="_StreetAddress" field="_StreetAddress" usage="optional" style="attribute"/>
+    <value name="_StreetAddress2" field="_StreetAddress2" usage="optional" style="attribute"/>
+    <value name="_City" field="_City" usage="optional" style="attribute"/>
+    <value name="_State" field="_State" usage="optional" style="attribute"/>
+    <value name="_PostalCode" field="_PostalCode" usage="optional" style="attribute"/>
+    <value name="LoginAccountIdentifier" field="loginAccountIdentifier" usage="optional" style="attribute"/>
+    <value name="LoginAccountPassword" field="loginAccountPassword" usage="optional" style="attribute"/>
+    <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="_ADDON" class="com.sysdelphia.bindings.mismo.TITLETITLEREQUESTPRODUCTNAMEADDONType">
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
+    <value name="_Description" field="_Description" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="_NAME" class="com.sysdelphia.bindings.mismo.TITLETITLEREQUESTPRODUCTNAMEType">
+    <collection field="_ADDONList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLETITLEREQUESTPRODUCTNAMEADDONType"></structure>
+    </collection>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
+    <value name="_Description" field="_Description" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="_PRODUCT" class="com.sysdelphia.bindings.mismo.TITLETITLEREQUESTPRODUCTType">
+    <collection field="_TYPEList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLETITLEREQUESTPRODUCTTYPEType"></structure>
+    </collection>
+    <collection field="_NAMEList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLETITLEREQUESTPRODUCTNAMEType"></structure>
+    </collection>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_CategoryType" field="_CategoryType" usage="optional" style="attribute"/>
+    <value name="_CategoryTypeOtherDescription" field="_CategoryTypeOtherDescription" usage="optional" style="attribute"/>
+    <value name="ServiceRequestedPriceAmount" field="serviceRequestedPriceAmount" usage="optional" style="attribute"/>
+    <value name="ServiceRequestedCompletionDueDate" field="serviceRequestedCompletionDueDate" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="_TYPE" class="com.sysdelphia.bindings.mismo.TITLETITLEREQUESTPRODUCTTYPEType">
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
+    <value name="_Description" field="_Description" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="TITLE_REQUEST" class="com.sysdelphia.bindings.mismo.TITLETITLEREQUESTType">
+    <collection field="borrowerList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLEBORROWERType"></structure>
+    </collection>
+    <collection field="loaNPURPOSEList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLELOANPURPOSEType"></structure>
+    </collection>
+    <collection field="mortgagETERMSList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLEMORTGAGETERMSType"></structure>
+    </collection>
+    <collection field="propertyList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLEPROPERTYType"></structure>
+    </collection>
+    <collection field="keyList">
+      <structure name="KEY" type="com.sysdelphia.bindings.mismo.TITLEKEYType"></structure>
+    </collection>
+    <collection field="_PRODUCTList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLETITLEREQUESTPRODUCTType"></structure>
+    </collection>
+    <collection field="executionList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLEEXECUTIONType"></structure>
+    </collection>
+    <collection field="reaLESTATEAGENTList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLEREALESTATEAGENTType"></structure>
+    </collection>
+    <collection field="payoffList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLEPAYOFFType"></structure>
+    </collection>
+    <collection field="sellerList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLESELLERType"></structure>
+    </collection>
+    <structure field="lender" usage="optional" map-as="com.sysdelphia.bindings.mismo.TITLELENDERType"></structure>
+    <collection field="embeddeDFILEList">
+      <structure map-as="com.sysdelphia.bindings.mismo.TITLEEMBEDDEDFILEType"></structure>
+    </collection>
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_ActionType" field="_ActionType" usage="optional" style="attribute"/>
+    <value name="TitleOwnershipType" field="titleOwnershipType" usage="optional" style="attribute"/>
+    <value name="TitleOwnershipTypeOtherDescription" field="titleOwnershipTypeOtherDescription" usage="optional" style="attribute"/>
+    <value name="NamedInsuredType" field="namedInsuredType" usage="optional" style="attribute"/>
+    <value name="TitleAssociationType" field="titleAssociationType" usage="optional" style="attribute"/>
+    <value name="TitleAssociationTypeOtherDescription" field="titleAssociationTypeOtherDescription" usage="optional" style="attribute"/>
+    <value name="_Comment" field="_Comment" usage="optional" style="attribute"/>
+    <value name="InsuredName" field="insuredName" usage="optional" style="attribute"/>
+    <value name="MISMOVersionID" field="mismoVersionID" usage="optional" style="attribute"/>
+    <value name="OfficeIdentifier" field="officeIdentifier" usage="optional" style="attribute"/>
+    <value name="ProcessorIdentifier" field="processorIdentifier" usage="optional" style="attribute"/>
+    <value name="_ProposedTitleInsuranceCoverageAmount" field="_ProposedTitleInsuranceCoverageAmount" usage="optional" style="attribute"/>
+    <value name="RequestedClosingDate" field="requestedClosingDate" usage="optional" style="attribute"/>
+    <value name="RequestedClosingTime" field="requestedClosingTime" usage="optional" style="attribute"/>
+    <value name="VendorOrderIdentifier" field="vendorOrderIdentifier" usage="optional" style="attribute"/>
+    <value name="VendorTransactionIdentifier" field="vendorTransactionIdentifier" usage="optional" style="attribute"/>
+  </mapping>
+  <mapping name="UNPLATTED_LAND" class="com.sysdelphia.bindings.mismo.TITLEUNPLATTEDLANDType">
+    <value name="_ID" field="_ID" usage="optional" style="attribute"/>
+    <value name="_DescriptionType" field="_DescriptionType" usage="optional" style="attribute"/>
+    <value name="_DescriptionTypeOtherDescription" field="_DescriptionTypeOtherDescription" usage="optional" style="attribute"/>
+    <value name="PropertyTownshipIdentifier" field="propertyTownshipIdentifier" usage="optional" style="attribute"/>
+    <value name="PropertyRangeIdentifier" field="propertyRangeIdentifier" usage="optional" style="attribute"/>
+    <value name="PropertySectionIdentifier" field="propertySectionIdentifier" usage="optional" style="attribute"/>
+    <value name="_AbstractNumberIdentifier" field="_AbstractNumberIdentifier" usage="optional" style="attribute"/>
+    <value name="_BaseIdentifier" field="_BaseIdentifier" usage="optional" style="attribute"/>
+    <value name="_LandGrantIdentifier" field="_LandGrantIdentifier" usage="optional" style="attribute"/>
+    <value name="_MeridianIdentifier" field="_MeridianIdentifier" usage="optional" style="attribute"/>
+    <value name="_MetesAndBoundsRemainingDescription" field="_MetesAndBoundsRemainingDescription" usage="optional" style="attribute"/>
+    <value name="_QuarterSectionIdentifier" field="_QuarterSectionIdentifier" usage="optional" style="attribute"/>
+  </mapping>
+</binding>

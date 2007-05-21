@@ -1,15 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="mismo-bindings">
-	<target name="init">
-		<property file="project.properties" />
+<project name="mismo-bindings" default="default">
+	<target name="default" description="builds the target that is default for this module" depends="init">
+		<antcall target="${module.target}" />
 	</target>
-	<target name="xsd2jibx" depends="init">
-		<java jar="tools/xsd2jibx/xsd2jibx.jar" fork="true">
+	<target name="all-modules">
+		<antcall target="default" inheritall="false">
+			<param name="module.dir" location="${basedir}/modules/common" />
+		</antcall>
+		<antcall target="default" inheritall="false">
+			<param name="module.dir" location="${basedir}/modules/title" />
+		</antcall>
+		<antcall target="default" inheritall="false">
+			<param name="module.dir" location="${basedir}/modules/enveloping" />
+		</antcall>
+	</target>
+	<target name="jar" depends="compile">
+		<mkdir dir="${dist.dir}" />
+		<jar destfile="${jar.file}">
+			<fileset dir="${build.classes}" />
+		</jar>
+	</target>
+
+	<target name="compile" depends="xsd2jibx,compile-gen-src,compile-src,jibx-bind,compile-test" description="compiles Java sources to bytecode and copies resources" />
+
+	<target name="compile-gen-src" depends="init" description="compiles generated Java sources to bytecode and copies resources" if="exists.gen-src">
+		<copy todir="${build.classes}">
+			<!-- copy resources from source dir to bytecode dir -->
+			<fileset dir="${gen-src.dir}" excludes="**/*.java" />
+		</copy>
+		<javac destdir="${build.classes}" classpathref="build.classpath">
+			<src path="${gen-src.dir}" />
+		</javac>
+		<available property="exists.binding.xml" file="${build.classes}/${binding.xml}"/>
+	</target>
+	<target name="compile-src" depends="init" description="compiles Java sources to bytecode and copies resources" if="exists.src">
+		<copy todir="${build.classes}">
+			<!-- copy resources from source dir to bytecode dir -->
+			<fileset dir="${src.dir}" excludes="**/*.java" />
+		</copy>
+		<javac destdir="${build.classes}" classpathref="build.classpath">
+			<src path="${src.dir}" />
+		</javac>
+	</target>
+	<target name="compile-test" depends="init" description="compiles test Java sources to bytecode and copies resources" if="exists.gen-src">
+		<copy todir="${build.test-classes}">
+			<!-- copy resources from source dir to bytecode dir -->
+			<fileset dir="${test-src.dir}" excludes="**/*.java" />
+		</copy>
+		<javac destdir="${build.test-classes}">
+			<classpath>
+				<path refid="build.classpath" />
+				<pathelement path="${basedir}/tools/junit/junit.jar" />
+			</classpath>
+			<src path="${test-src.dir}" />
+		</javac>
+	</target>
+
+	<target name="init">
+		<!-- if module.dir property is not already set, it defaults to the current working dir -->
+		<property name="module.dir" location="${user.dir}" />
+		<!-- determine the relative path from ${basedir} to ${module.dir} -->
+		<pathconvert property="module.path" dirsep="/">
+			<path>
+				<pathelement location="${module.dir}" />
+			</path>
+			<map from="${basedir}" to="." />
+		</pathconvert>
+		<property name="dist.dir" location="${basedir}/dist" />
+		<property name="build.dir" location="${basedir}/build" />
+		<property name="build.classes" location="${build.dir}/${module.path}/classes" />
+		<property name="build.test-classes" location="${build.dir}/${module.path}/test-classes" />
+		<property name="src.dir" location="${module.dir}/src" />
+		<property name="gen-src.dir" location="${build.dir}/${module.path}/gen-src" />
+		<property name="test-src.dir" location="${module.dir}/test" />
+
+		<property file="${module.dir}/module.properties" />
+		<property file="${basedir}/project.properties" />
+		<echo>Building module: ${module.name} in path: ${module.path}</echo>
+
+		<path id="build.classpath">
+			<pathelement location="${build.classes}" />
+			<fileset dir="lib/java" includes="*.jar" />
+		</path>
+		<property name="jar.filename" location="${module.name}.jar" />
+		<property name="jar.file" location="${dist.dir}/${jar.filename}" />
+
+		<available property="exists.src" file="${src.dir}" />
+		<available property="exists.gen-src" file="${gen-src.dir}" />
+		<available property="exists.binding.xml" file="${build.classes}/${binding.xml}"/>
+		<available property="exists.xsd2jibx.touch" file="${gen-src.dir}/xsd2jibx.touch"/>
+	</target>
+
+	<!-- misc. targets (not always used) -->
+	<target name="dist-clean" depends="clean" description="removes all outputs of the build">
+		<delete dir="${dist.dir}" />
+	</target>
+	<target name="clean" depends="init" description="removes intermediate outputs of the build">
+		<delete dir="${build.dir}" />
+	</target>
+
+	<target name="jibx-bind" depends="init" if="exists.binding.xml" description="runs JiBX binding compiler on the compiled bytecode">
+		<!-- JiBX binding compiler task definition -->
+		<taskdef name="jibx-bind" classname="org.jibx.binding.ant.CompileTask" classpath="tools/jibx/jibx-bind.jar;lib/java/jibx-run.jar" />
+		<jibx-bind binding="${build.classes}/${binding.xml}">
+			<classpath>
+				<pathelement path="${build.classes}" />
+				<path refid="build.classpath" />
+			</classpath>
+		</jibx-bind>
+	</target>
+	<target name="xsd2jibx" depends="init" if="xsd2jibx.grammars" unless="exists.xsd2jibx.touch" description="generates JiBX code and bindings from XSD">
+		<java jar="tools/xsd2jibx/xsd2jibx.jar" fork="true" failonerror="true">
 			<classpath path="tools/xsd2jibx/*.jar" />
-			<arg line="-d gen-src/java" />
-			<arg line="-n com.sysdelphia.bindings.mismo" />
+			<arg line="-d ${gen-src.dir}" />
+			<arg line="-n ${binding.pkg}" />
 			<arg line="-p http://www.w3.org/2000/09/xmldsig#=com.sysdelphia.bindings.w3.xmldsig" />
 			<arg line="${xsd2jibx.grammars}" />
 		</java>
+		<available property="exists.gen-src" file="${gen-src.dir}" />
+		<available property="exists.binding.xml" file="${gen-src.dir}/${binding.xml}" />
+		<delete>
+			<fileset dir="${gen-src.dir}">
+				<present targetdir="${src.dir}" />
+			</fileset>
+		</delete>
+		<touch file="${gen-src.dir}/xsd2jibx.touch" />
 	</target>
 </project>

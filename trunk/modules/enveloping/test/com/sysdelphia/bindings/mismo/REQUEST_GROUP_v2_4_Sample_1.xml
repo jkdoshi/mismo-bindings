@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE REQUEST_GROUP SYSTEM "Request_Group_v2_4_Draft.dtd">
+<REQUEST_GROUP MISMOVersionID="2.4" _Identifier="{3F2504E0-4F89-11D3-9A0C-0305E82C3301}" _ID="RG123">
+	<REQUESTING_PARTY _Name="Sample Lender" _StreetAddress="789 Lender Avenue" _StreetAddress2="Suite 123" _City="Milwaukee" _State="WI" _PostalCode="53202" _Identifier="{3J2504E0-4F89-11D3-9A0C-0305E82C3444}" _TransactionIdentifier="{9D021008-B9ED-40b6-9704-F81D94100E8D}" _ID="REQ123">
+		<CONTACT_DETAIL _Name="Greg O'Welisten" _Identifier="Tech" _FirstName="Greg" _LastName="Welisten" _MiddleName="W" _SequenceIdentifier="1" _ID="CD1">
+			<CONTACT_POINT _Type="Phone" _Value="201-348-4033" _PreferenceIndicator="N"/>
+			<CONTACT_POINT _Type="Email" _Value="gregowelisten@samplelender.com" _PreferenceIndicator="N"/>
+			<CONTACT_POINT  _RoleType="Other" _Type="Other" _TypeOtherDescription="TwoCansOnAString" _Value="gregowelisten@samplelender.com" _PreferenceIndicator="Y" _RoleTypeOtherDescription="Play" _ID="CP1"/>
+		</CONTACT_DETAIL>
+		<PREFERRED_RESPONSE _Format="PDF" _Method="File" _Destination="70240023.pdf" _UseEmbeddedFileIndicator="Y" MIMEType="application/pdf" _ID="PR1"/>
+		<PREFERRED_RESPONSE _Format="Text" _Method="SMTP" _Destination="DSmith@ABC.com" _UseEmbeddedFileIndicator="N" MIMEType="multipart/encrypted" _ID="PR2"/>
+	</REQUESTING_PARTY>
+	<RECEIVING_PARTY _Name="Mortgage Insurance Company" _StreetAddress="789 Homeownwership Avenue" _StreetAddress2="Suite 123" _City="Milwaukee" _State="WI" _PostalCode="53202" _Identifier="{3F2504E0-4F89-11D3-9A0C-0305E82C3555}" _ID="REC123"/>
+	<SUBMITTING_PARTY _SequenceIdentifier="1" _Name="Sample L.O.S." LoginAccountIdentifier="losusername" LoginAccountPassword="lospassword" _Identifier="IDLOS1" _TransactionIdentifier="{2C8B096C-15C1-4bc0-AA6B-24373ADAB8CD}" _ID="SUB1">
+		<CONTACT_DETAIL _Name="Gloriasees Alot" _Identifier="Tech" _FirstName="Gloriasees" _LastName="Alot" _SequenceIdentifier="1" _ID="CD2">
+			<CONTACT_POINT _RoleType="Home" _Type="Phone" _Value="703-555-1212" _PreferenceIndicator="Y"/>
+			<CONTACT_POINT _RoleType="Work" _Type="Email" _Value="gloriaseesalot@samplelos.com" _PreferenceIndicator="Y" _ID="CP2"/>
+		</CONTACT_DETAIL>
+		<CONTACT_DETAIL _Name="Fred Smith" _Identifier="Business" _FirstName="Fred" _LastName="Smith" _SequenceIdentifier="2" _ID="CD3">
+			<CONTACT_POINT _Type="Phone" _Value="201-348-4034"/>
+			<CONTACT_POINT _Type="Email" _Value="fsmith@samplelender.com"/>
+		</CONTACT_DETAIL>
+		<PREFERRED_RESPONSE _Format="XML" _Method="HTTPS" _Destination="https://testing.XYZWebPortalCompany.com/MiDataPost/post.asp" _UseEmbeddedFileIndicator="N" _VersionIdentifier="2.4" _ID="PR3"/>
+		<PREFERRED_RESPONSE _Format="Text" _Method="HTTPS" _Destination="https://testing.XYZWebPortalCompany.com/MiDataPost/post.asp" _UseEmbeddedFileIndicator="Y" _ID="PR4"/>
+	</SUBMITTING_PARTY>
+	<SUBMITTING_PARTY _SequenceIdentifier="2" _Name="Sample Portal" LoginAccountIdentifier="portalusername" LoginAccountPassword="portalpassword" _Identifier="IDPORTAL1" _TransactionIdentifier="{B27CEE5A-6857-406f-B847-C644D89BCEFA}" _ID="SUB2">
+		<CONTACT_DETAIL _Name="Gaberuns abit" _Identifier="Tech" _FirstName="Gaberuns" _LastName="abit" _SequenceIdentifier="1">
+			<CONTACT_POINT _Type="Phone" _Value="202-456-1111"/>
+			<CONTACT_POINT _Type="Email" _Value="gaberunsabit@sampleportal.com"/>
+		</CONTACT_DETAIL>
+	</SUBMITTING_PARTY>
+	<REQUEST RequestDatetime="2002-01-08T17:19:01" InternalAccountIdentifier="1234" LoginAccountIdentifier="Login Text" LoginAccountPassword="Password Text" RequestingPartyBranchIdentifier="0001" _Identifier="{3F2504E0-4F89-11D3-9A0C-0305E82C3666}" _ID="REQ1">
+		<KEY _Name="Text" _Value="Text" _ID="KEY1"/>
+		<REQUEST_DATA>--THE REQUEST PAYLOAD--</REQUEST_DATA>
+	</REQUEST>
+</REQUEST_GROUP>
