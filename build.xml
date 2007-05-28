@@ -21,7 +21,7 @@
 		</jar>
 	</target>
 
-	<target name="compile" depends="xsd2jibx,compile-gen-src,compile-src,jibx-bind,compile-test" description="compiles Java sources to bytecode and copies resources" />
+	<target name="compile" depends="compile-gen-src,compile-src,jibx-bind,compile-test" description="compiles Java sources to bytecode and copies resources" />
 
 	<target name="compile-gen-src" depends="init" description="compiles generated Java sources to bytecode and copies resources" if="exists.gen-src">
 		<copy todir="${build.classes}">
@@ -88,7 +88,6 @@
 		<available property="exists.src" file="${src.dir}" />
 		<available property="exists.gen-src" file="${gen-src.dir}" />
 		<available property="exists.binding.xml" file="${build.classes}/${binding.xml}"/>
-		<available property="exists.xsd2jibx.touch" file="${gen-src.dir}/xsd2jibx.touch"/>
 	</target>
 
 	<!-- misc. targets (not always used) -->
@@ -109,7 +108,7 @@
 			</classpath>
 		</jibx-bind>
 	</target>
-	<target name="xsd2jibx" depends="init" if="xsd2jibx.grammars" unless="exists.xsd2jibx.touch" description="generates JiBX code and bindings from XSD">
+	<target name="xsd2jibx" depends="init" if="xsd2jibx.grammars" description="generates JiBX code and bindings from XSD">
 		<java jar="tools/xsd2jibx/xsd2jibx.jar" fork="true" failonerror="true">
 			<classpath path="tools/xsd2jibx/*.jar" />
 			<arg line="-d ${gen-src.dir}" />
