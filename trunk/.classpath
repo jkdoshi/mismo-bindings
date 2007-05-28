@@ -2,10 +2,8 @@
 <classpath>
 	<classpathentry output="build/modules/enveloping/test-classes" kind="src" path="modules/enveloping/test"/>
 	<classpathentry output="build/modules/enveloping/classes" kind="src" path="modules/enveloping/src"/>
-	<classpathentry output="build/modules/enveloping/classes" kind="src" path="build/modules/enveloping/gen-src"/>
 	<classpathentry output="build/modules/title/test-classes" kind="src" path="modules/title/test"/>
 	<classpathentry output="build/modules/title/classes" kind="src" path="modules/title/src"/>
-	<classpathentry output="build/modules/title/classes" kind="src" path="build/modules/title/gen-src"/>
 	<classpathentry output="build/modules/common/test-classes" kind="src" path="modules/common/test"/>
 	<classpathentry output="build/modules/common/classes" kind="src" path="modules/common/src"/>
 	<classpathentry sourcepath="C:/jitesh/downloads/jibx_1_1_3.zip" kind="lib" path="lib/java/jibx-run.jar"/>

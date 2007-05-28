@@ -107,6 +107,9 @@
     <collection field="contacTDETAILList">
       <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.ENVELOPECONTACTDETAILType"></structure>
     </collection>
+    <collection field="preferreDRESPONSEList">
+      <structure map-as="com.sysdelphia.bindings.mismo.ENVELOPEPREFERREDRESPONSEType"></structure>
+    </collection>
     <value name="_SequenceIdentifier" field="_SequenceIdentifier" usage="optional" style="attribute"/>
     <value name="_Name" field="_Name" usage="optional" style="attribute"/>
     <value name="_StreetAddress" field="_StreetAddress" usage="optional" style="attribute"/>
