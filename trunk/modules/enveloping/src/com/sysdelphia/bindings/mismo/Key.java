@@ -1,6 +1,6 @@
 package com.sysdelphia.bindings.mismo;
 
-public class ENVELOPEKEYType {
+public class Key {
   protected String _Name;
 
   protected String _Value;

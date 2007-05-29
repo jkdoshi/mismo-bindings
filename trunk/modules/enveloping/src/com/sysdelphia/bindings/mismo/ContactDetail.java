@@ -3,7 +3,7 @@ package com.sysdelphia.bindings.mismo;
 import java.util.ArrayList;
 
 
-public class ENVELOPECONTACTDETAILType {
+public class ContactDetail {
   protected String _Name;
 
   protected String _Identifier;
@@ -21,12 +21,12 @@ public class ENVELOPECONTACTDETAILType {
   protected String _ID;
 
 
-  public void addCONTACTPOINT(ENVELOPECONTACTPOINTType contacTPOINT) {
+  public void addCONTACTPOINT(ContactPoint contacTPOINT) {
     contacTPOINTList.add(contacTPOINT);
   }
 
-  public ENVELOPECONTACTPOINTType getCONTACTPOINT(int index) {
-    return (ENVELOPECONTACTPOINTType)contacTPOINTList.get( index );
+  public ContactPoint getCONTACTPOINT(int index) {
+    return (ContactPoint)contacTPOINTList.get( index );
   }
 
   public int sizeCONTACTPOINTList() {

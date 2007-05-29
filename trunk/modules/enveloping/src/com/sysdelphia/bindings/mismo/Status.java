@@ -1,6 +1,6 @@
 package com.sysdelphia.bindings.mismo;
 
-public class ENVELOPESTATUSType {
+public class Status {
   protected String _Condition;
 
   protected String _Code;

@@ -1,4 +1,4 @@
 package com.sysdelphia.bindings.mismo;
 
-public class ENVELOPEDIGSIGType {
+public class DigitalSignature {
 }

@@ -1,10 +1,9 @@
 package com.sysdelphia.bindings.mismo;
 
 import java.util.ArrayList;
-import java.util.ArrayList;
 
 
-public class ENVELOPEREQUESTINGPARTYType {
+public class RespondToParty {
   protected String _Name;
 
   protected String _StreetAddress;
@@ -24,28 +23,16 @@ public class ENVELOPEREQUESTINGPARTYType {
   protected String _ID;
 
 
-  public void addCONTACTDETAIL(ENVELOPECONTACTDETAILType contacTDETAIL) {
+  public void addCONTACTDETAIL(ContactDetail contacTDETAIL) {
     contacTDETAILList.add(contacTDETAIL);
   }
 
-  public ENVELOPECONTACTDETAILType getCONTACTDETAIL(int index) {
-    return (ENVELOPECONTACTDETAILType)contacTDETAILList.get( index );
+  public ContactDetail getCONTACTDETAIL(int index) {
+    return (ContactDetail)contacTDETAILList.get( index );
   }
 
   public int sizeCONTACTDETAILList() {
     return contacTDETAILList.size();
-  }
-
-  public void addPREFERREDRESPONSE(ENVELOPEPREFERREDRESPONSEType preferreDRESPONSE) {
-    preferreDRESPONSEList.add(preferreDRESPONSE);
-  }
-
-  public ENVELOPEPREFERREDRESPONSEType getPREFERREDRESPONSE(int index) {
-    return (ENVELOPEPREFERREDRESPONSEType)preferreDRESPONSEList.get( index );
-  }
-
-  public int sizePREFERREDRESPONSEList() {
-    return preferreDRESPONSEList.size();
   }
 
   public String get_Name() {
@@ -121,7 +108,5 @@ public class ENVELOPEREQUESTINGPARTYType {
   }
 
   protected ArrayList contacTDETAILList = new ArrayList();
-
-  protected ArrayList preferreDRESPONSEList = new ArrayList();
 
 }
