@@ -125,4 +125,14 @@
 		</delete>
 		<touch file="${gen-src.dir}/xsd2jibx.touch" />
 	</target>
+	<target name="test-roundtrip" depends="init" description="Runs jibx's roundtrip test">
+		<java jar="tools/jibx/jibx-extras.jar" fork="true" failonerror="true">
+			<classpath>
+				<path refid="build.classpath" />
+				<pathelement path="${basedir}/build/modules/enveloping/classes"/>
+			</classpath>
+			<arg value="com.sysdelphia.bindings.mismo.ENVELOPEREQUESTGROUPType" />
+			<arg value="${basedir}/modules/enveloping/test/com/sysdelphia/bindings/mismo/REQUEST_GROUP_v2_4_Sample_1.xml" />
+		</java>
+	</target>
 </project>
