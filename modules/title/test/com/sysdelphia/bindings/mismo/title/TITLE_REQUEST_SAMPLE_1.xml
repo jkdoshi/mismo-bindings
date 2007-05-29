@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<REQUEST_GROUP xmlns:mismo="http://mismo.org/schema" MISMOVersionID="2.3.1" _ID="ID000093">
+	<REQUESTING_PARTY _City="String" _Name="String" _State="String" _ID="ID000094" _PostalCode="String" _StreetAddress="String" _StreetAddress2="String">
+		<CONTACT_DETAIL _Name="String" _ID="ID000095">
+			<CONTACT_POINT _PreferenceIndicator="Y" _RoleType="Home" _ID="ID000096" _TypeOtherDescription="String" _Type="Email" _Value="String"/>
+		</CONTACT_DETAIL>
+		<PREFERRED_RESPONSE _Format="Other" _Method="Fax" _Destination="String" _ID="ID000097" _FormatOtherDescription="String" MIMEType="String" _MethodOther="String" _UseEmbeddedFileIndicator="Y" _VersionIdentifier="String"/>
+	</REQUESTING_PARTY>
+	<RECEIVING_PARTY _City="String" _Name="String" _State="String" _ID="ID000098" _Identifier="String" _PostalCode="String" _StreetAddress="String" _StreetAddress2="String">
+		<CONTACT_DETAIL _Name="String" _ID="ID000099">
+			<CONTACT_POINT _PreferenceIndicator="Y" _RoleType="Home" _ID="ID000100" _TypeOtherDescription="String" _Type="Email" _Value="String"/>
+		</CONTACT_DETAIL>
+	</RECEIVING_PARTY>
+	<SUBMITTING_PARTY _City="String" _Name="String" _State="String" _ID="ID000101" _SequenceIdentifier="String" LoginAccountPassword="String" _Identifier="String" _PostalCode="String" _StreetAddress="String" _StreetAddress2="String" LoginAccountIdentifier="String">
+		<CONTACT_DETAIL _Name="String" _ID="ID000102">
+			<CONTACT_POINT _PreferenceIndicator="Y" _RoleType="Home" _ID="ID000103" _TypeOtherDescription="String" _Type="Email" _Value="String"/>
+		</CONTACT_DETAIL>
+		<PREFERRED_RESPONSE _Format="Other" _Method="Fax" _Destination="String" _ID="ID000104" _FormatOtherDescription="String" MIMEType="String" _MethodOther="String" _UseEmbeddedFileIndicator="Y" _VersionIdentifier="String"/>
+	</SUBMITTING_PARTY>
+	<REQUEST RequestingPartyBranchIdentifier="String" RequestDatetime="String" _ID="ID000105" LoginAccountPassword="String" InternalAccountIdentifier="String" LoginAccountIdentifier="String">
+		<KEY _Name="String" _ID="ID000106" _Value="String"/>
+		<REQUEST_DATA>
+			<TITLE_REQUEST>
+				<BORROWER _SequenceIdentifier="1" _FirstName="Shannon" _MiddleName="M" _LastName="Anderson" _SSN="222-22-4444" _NameSuffix="S">
+					<_RESIDENCE _StreetAddress="444 Herring Rd" _City="Grayson" _State="GA" _PostalCode="30017" _StreetAddress2="ABC"/>
+					<CONTACT_POINT _RoleType="Home" _Type="Phone" _Value="7322335445"/>
+					<CONTACT_POINT _RoleType="Work" _Type="Phone" _Value="7324545885"/>
+				</BORROWER>
+				<BORROWER _SequenceIdentifier="2" _FirstName="Jacob" _MiddleName="M" _LastName="Anderson" _SSN="222-22-8888" _NameSuffix="M">
+					<_RESIDENCE _StreetAddress="444 Herring Rd" _City="Grayson" _State="GA" _PostalCode="30017" _StreetAddress2="ABC"/>
+					<CONTACT_POINT _RoleType="Home" _Type="Phone" _Value="7322338888"/>
+					<CONTACT_POINT _RoleType="Work" _Type="Phone" _Value="7324559999"/>
+				</BORROWER>
+				 <LOAN_PURPOSE EstimatedCashOutAmount="80000.0" OtherLoanPurposeDescription="1st Mortgage" PropertyUsageType="PrimaryResidence" _Type="Refinance"/>
+                <MORTGAGE_TERMS BaseLoanAmount="320000" LienPriorityType="FirstLien"/>
+				<PROPERTY _StreetAddress="1111 Park Ave" _City="Bedford" _State="IN" _County="Lawrence" _PostalCode="47421" _StreetAddress2="XYZ" _TitleCategoryType="SingleFamily"/>
+                <KEY _Name="LIEN_HOLDER" _Value="XYZ MORTGAGE"/>
+            <KEY _Name="TITLE_POLICY" _Value="FULL ALTA"/>
+            <_PRODUCT>
+               <_TYPE _Description="346" _Identifier="XyzProductCode"/>
+               <_TYPE _Description="80000.0" _Identifier="CombinedLoanAmount"/>
+            </_PRODUCT>
+            </TITLE_REQUEST>
+		</REQUEST_DATA>
+	</REQUEST>
+</REQUEST_GROUP>
