@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.ArrayList;
 
 
-public class ENVELOPERESPONSEGROUPType {
-  protected ENVELOPERESPONDINGPARTYType respondinGPARTY;
+public class ResponseGroup {
+  protected RespondingParty respondinGPARTY;
 
-  protected ENVELOPERESPONDTOPARTYType responDTOPARTY;
+  protected RespondToParty responDTOPARTY;
 
   protected SignatureType signature;
 
@@ -19,40 +19,40 @@ public class ENVELOPERESPONSEGROUPType {
   protected String _ID;
 
 
-  public ENVELOPERESPONDINGPARTYType getRESPONDINGPARTY() {
+  public RespondingParty getRESPONDINGPARTY() {
     return this.respondinGPARTY;
   }
 
-  public void setRESPONDINGPARTY(ENVELOPERESPONDINGPARTYType respondinGPARTY) {
+  public void setRESPONDINGPARTY(RespondingParty respondinGPARTY) {
     this.respondinGPARTY = respondinGPARTY;
   }
 
-  public void addSUBMITTINGPARTY(ENVELOPESUBMITTINGPARTYType submittinGPARTY) {
+  public void addSUBMITTINGPARTY(SubmittingParty submittinGPARTY) {
     submittinGPARTYList.add(submittinGPARTY);
   }
 
-  public ENVELOPESUBMITTINGPARTYType getSUBMITTINGPARTY(int index) {
-    return (ENVELOPESUBMITTINGPARTYType)submittinGPARTYList.get( index );
+  public SubmittingParty getSUBMITTINGPARTY(int index) {
+    return (SubmittingParty)submittinGPARTYList.get( index );
   }
 
   public int sizeSUBMITTINGPARTYList() {
     return submittinGPARTYList.size();
   }
 
-  public ENVELOPERESPONDTOPARTYType getRESPONDTOPARTY() {
+  public RespondToParty getRESPONDTOPARTY() {
     return this.responDTOPARTY;
   }
 
-  public void setRESPONDTOPARTY(ENVELOPERESPONDTOPARTYType responDTOPARTY) {
+  public void setRESPONDTOPARTY(RespondToParty responDTOPARTY) {
     this.responDTOPARTY = responDTOPARTY;
   }
 
-  public void addRESPONSE(ENVELOPERESPONSEType response) {
+  public void addRESPONSE(Response response) {
     responseList.add(response);
   }
 
-  public ENVELOPERESPONSEType getRESPONSE(int index) {
-    return (ENVELOPERESPONSEType)responseList.get( index );
+  public Response getRESPONSE(int index) {
+    return (Response)responseList.get( index );
   }
 
   public int sizeRESPONSEList() {

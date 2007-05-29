@@ -3,7 +3,7 @@ package com.sysdelphia.bindings.mismo;
 import java.util.ArrayList;
 
 
-public class ENVELOPERESPONDTOPARTYType {
+public class RespondingParty {
   protected String _Name;
 
   protected String _StreetAddress;
@@ -23,12 +23,12 @@ public class ENVELOPERESPONDTOPARTYType {
   protected String _ID;
 
 
-  public void addCONTACTDETAIL(ENVELOPECONTACTDETAILType contacTDETAIL) {
+  public void addCONTACTDETAIL(ContactDetail contacTDETAIL) {
     contacTDETAILList.add(contacTDETAIL);
   }
 
-  public ENVELOPECONTACTDETAILType getCONTACTDETAIL(int index) {
-    return (ENVELOPECONTACTDETAILType)contacTDETAILList.get( index );
+  public ContactDetail getCONTACTDETAIL(int index) {
+    return (ContactDetail)contacTDETAILList.get( index );
   }
 
   public int sizeCONTACTDETAILList() {

@@ -3,7 +3,7 @@ package com.sysdelphia.bindings.mismo;
 import java.util.ArrayList;
 
 
-public class ENVELOPESUBMITTINGPARTYType {
+public class SubmittingParty {
   protected String _SequenceIdentifier;
 
   protected String _Name;
@@ -29,24 +29,24 @@ public class ENVELOPESUBMITTINGPARTYType {
   protected String _ID;
 
 
-  public void addCONTACTDETAIL(ENVELOPECONTACTDETAILType contacTDETAIL) {
+  public void addCONTACTDETAIL(ContactDetail contacTDETAIL) {
     contacTDETAILList.add(contacTDETAIL);
   }
 
-  public ENVELOPECONTACTDETAILType getCONTACTDETAIL(int index) {
-    return (ENVELOPECONTACTDETAILType)contacTDETAILList.get( index );
+  public ContactDetail getCONTACTDETAIL(int index) {
+    return (ContactDetail)contacTDETAILList.get( index );
   }
 
   public int sizeCONTACTDETAILList() {
     return contacTDETAILList.size();
   }
 
-  public void addPREFERREDRESPONSE(ENVELOPEPREFERREDRESPONSEType preferreDRESPONSE) {
+  public void addPREFERREDRESPONSE(PreferredResponse preferreDRESPONSE) {
     preferreDRESPONSEList.add(preferreDRESPONSE);
   }
 
-  public ENVELOPEPREFERREDRESPONSEType getPREFERREDRESPONSE(int index) {
-    return (ENVELOPEPREFERREDRESPONSEType)preferreDRESPONSEList.get( index );
+  public PreferredResponse getPREFERREDRESPONSE(int index) {
+    return (PreferredResponse)preferreDRESPONSEList.get( index );
   }
 
   public int sizePREFERREDRESPONSEList() {

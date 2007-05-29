@@ -13,9 +13,9 @@ import junit.framework.TestCase;
 public class EnvelopingTest extends TestCase {
 	public void testRequestGroup() throws JiBXException {
 		InputStream in = this.getClass().getResourceAsStream("REQUEST_GROUP_v2_4_Sample_1.xml");
-		IBindingFactory factory = BindingDirectory.getFactory(ENVELOPEREQUESTGROUPType.class);
+		IBindingFactory factory = BindingDirectory.getFactory(RequestGroup.class);
 		IUnmarshallingContext uctx = factory.createUnmarshallingContext();
-		ENVELOPEREQUESTGROUPType requestGroup = (ENVELOPEREQUESTGROUPType) uctx.unmarshalDocument(in, null);
+		RequestGroup requestGroup = (RequestGroup) uctx.unmarshalDocument(in, null);
 		IMarshallingContext mctx = factory.createMarshallingContext();
 		mctx.setOutput(System.out, null);
 		mctx.marshalDocument(requestGroup);

@@ -1,6 +1,6 @@
 package com.sysdelphia.bindings.mismo;
 
-public class ENVELOPECONTACTPOINTType {
+public class ContactPoint {
   protected String _RoleType;
 
   protected String _Type;

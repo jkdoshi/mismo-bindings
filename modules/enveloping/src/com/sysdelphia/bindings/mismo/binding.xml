@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <binding>
-  <mapping class="com.sysdelphia.bindings.mismo.ENVELOPECONTACTDETAILType" abstract="true">
+  <mapping class="com.sysdelphia.bindings.mismo.ContactDetail" abstract="true">
     <collection field="contacTPOINTList">
-      <structure map-as="com.sysdelphia.bindings.mismo.ENVELOPECONTACTPOINTType"></structure>
+      <structure map-as="com.sysdelphia.bindings.mismo.ContactPoint"></structure>
     </collection>
     <value name="_Name" field="_Name" usage="optional" style="attribute"/>
     <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
@@ -13,7 +13,7 @@
     <value name="_SequenceIdentifier" field="_SequenceIdentifier" usage="optional" style="attribute"/>
     <value name="_ID" field="_ID" usage="optional" style="attribute"/>
   </mapping>
-  <mapping name="CONTACT_POINT" class="com.sysdelphia.bindings.mismo.ENVELOPECONTACTPOINTType">
+  <mapping name="CONTACT_POINT" class="com.sysdelphia.bindings.mismo.ContactPoint">
     <value name="_RoleType" field="_RoleType" usage="optional" style="attribute"/>
     <value name="_Type" field="_Type" usage="optional" style="attribute"/>
     <value name="_TypeOtherDescription" field="_TypeOtherDescription" usage="optional" style="attribute"/>
@@ -22,13 +22,13 @@
     <value name="_RoleTypeOtherDescription" field="_RoleTypeOtherDescription" usage="optional" style="attribute"/>
     <value name="_ID" field="_ID" usage="optional" style="attribute"/>
   </mapping>
-  <mapping name="ENVELOPE_DIG_SIG_type" class="com.sysdelphia.bindings.mismo.ENVELOPEDIGSIGType"></mapping>
-  <mapping class="com.sysdelphia.bindings.mismo.ENVELOPEKEYType" abstract="true">
+  <mapping name="ENVELOPE_DIG_SIG_type" class="com.sysdelphia.bindings.mismo.DigitalSignature"></mapping>
+  <mapping class="com.sysdelphia.bindings.mismo.Key" abstract="true">
     <value name="_Name" field="_Name" usage="optional" style="attribute"/>
     <value name="_Value" field="_Value" usage="optional" style="attribute"/>
     <value name="_ID" field="_ID" usage="optional" style="attribute"/>
   </mapping>
-  <mapping name="PREFERRED_RESPONSE" class="com.sysdelphia.bindings.mismo.ENVELOPEPREFERREDRESPONSEType">
+  <mapping name="PREFERRED_RESPONSE" class="com.sysdelphia.bindings.mismo.PreferredResponse">
     <value name="_Format" field="_Format" usage="optional" style="attribute"/>
     <value name="_Method" field="_Method" usage="optional" style="attribute"/>
     <value name="_Destination" field="_Destination" usage="optional" style="attribute"/>
@@ -39,9 +39,9 @@
     <value name="_VersionIdentifier" field="_VersionIdentifier" usage="optional" style="attribute"/>
     <value name="_ID" field="_ID" usage="optional" style="attribute"/>
   </mapping>
-  <mapping name="RECEIVING_PARTY" class="com.sysdelphia.bindings.mismo.ENVELOPERECEIVINGPARTYType">
+  <mapping name="RECEIVING_PARTY" class="com.sysdelphia.bindings.mismo.ReceivingParty">
     <collection field="contacTDETAILList">
-      <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.ENVELOPECONTACTDETAILType"></structure>
+      <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.ContactDetail"></structure>
     </collection>
     <value name="_Name" field="_Name" usage="optional" style="attribute"/>
     <value name="_StreetAddress" field="_StreetAddress" usage="optional" style="attribute"/>
@@ -52,31 +52,31 @@
     <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
     <value name="_ID" field="_ID" usage="optional" style="attribute"/>
   </mapping>
-  <mapping name="REQUEST_DATA" class="com.sysdelphia.bindings.mismo.ENVELOPEREQUESTDATAType"></mapping>
-  <mapping name="REQUEST_GROUP" class="com.sysdelphia.bindings.mismo.ENVELOPEREQUESTGROUPType">
+  <mapping name="REQUEST_DATA" class="com.sysdelphia.bindings.mismo.RequestData"></mapping>
+  <mapping name="REQUEST_GROUP" class="com.sysdelphia.bindings.mismo.RequestGroup">
     <collection field="requestinGPARTYList">
-      <structure map-as="com.sysdelphia.bindings.mismo.ENVELOPEREQUESTINGPARTYType"></structure>
+      <structure map-as="com.sysdelphia.bindings.mismo.RequestingParty"></structure>
     </collection>
     <collection field="receivinGPARTYList">
-      <structure map-as="com.sysdelphia.bindings.mismo.ENVELOPERECEIVINGPARTYType"></structure>
+      <structure map-as="com.sysdelphia.bindings.mismo.ReceivingParty"></structure>
     </collection>
     <collection field="submittinGPARTYList">
-      <structure name="SUBMITTING_PARTY" type="com.sysdelphia.bindings.mismo.ENVELOPESUBMITTINGPARTYType"></structure>
+      <structure name="SUBMITTING_PARTY" type="com.sysdelphia.bindings.mismo.SubmittingParty"></structure>
     </collection>
     <collection field="requestList">
-      <structure map-as="com.sysdelphia.bindings.mismo.ENVELOPEREQUESTType"></structure>
+      <structure map-as="com.sysdelphia.bindings.mismo.Request"></structure>
     </collection>
     <structure name="Signature" field="signature" usage="optional" type="com.sysdelphia.bindings.w3.xmldsig.SignatureType"></structure>
     <value name="MISMOVersionID" field="mismoVersionID" usage="optional" style="attribute"/>
     <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
     <value name="_ID" field="_ID" usage="optional" style="attribute"/>
   </mapping>
-  <mapping name="REQUEST" class="com.sysdelphia.bindings.mismo.ENVELOPEREQUESTType">
+  <mapping name="REQUEST" class="com.sysdelphia.bindings.mismo.Request">
     <collection field="keyList">
-      <structure name="KEY" type="com.sysdelphia.bindings.mismo.ENVELOPEKEYType"></structure>
+      <structure name="KEY" type="com.sysdelphia.bindings.mismo.Key"></structure>
     </collection>
     <collection field="requesTDATAList">
-      <structure map-as="com.sysdelphia.bindings.mismo.ENVELOPEREQUESTDATAType"></structure>
+      <structure map-as="com.sysdelphia.bindings.mismo.RequestData"></structure>
     </collection>
     <value name="RequestDatetime" field="requestDatetime" usage="optional" style="attribute"/>
     <value name="InternalAccountIdentifier" field="internalAccountIdentifier" usage="optional" style="attribute"/>
@@ -86,12 +86,12 @@
     <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
     <value name="_ID" field="_ID" usage="optional" style="attribute"/>
   </mapping>
-  <mapping name="REQUESTING_PARTY" class="com.sysdelphia.bindings.mismo.ENVELOPEREQUESTINGPARTYType">
+  <mapping name="REQUESTING_PARTY" class="com.sysdelphia.bindings.mismo.RequestingParty">
     <collection field="contacTDETAILList">
-      <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.ENVELOPECONTACTDETAILType"></structure>
+      <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.ContactDetail"></structure>
     </collection>
     <collection field="preferreDRESPONSEList">
-      <structure map-as="com.sysdelphia.bindings.mismo.ENVELOPEPREFERREDRESPONSEType"></structure>
+      <structure map-as="com.sysdelphia.bindings.mismo.PreferredResponse"></structure>
     </collection>
     <value name="_Name" field="_Name" usage="optional" style="attribute"/>
     <value name="_StreetAddress" field="_StreetAddress" usage="optional" style="attribute"/>
@@ -103,12 +103,12 @@
     <value name="_TransactionIdentifier" field="_TransactionIdentifier" usage="optional" style="attribute"/>
     <value name="_ID" field="_ID" usage="optional" style="attribute"/>
   </mapping>
-  <mapping class="com.sysdelphia.bindings.mismo.ENVELOPESUBMITTINGPARTYType" abstract="true">
+  <mapping class="com.sysdelphia.bindings.mismo.SubmittingParty" abstract="true">
     <collection field="contacTDETAILList">
-      <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.ENVELOPECONTACTDETAILType"></structure>
+      <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.ContactDetail"></structure>
     </collection>
     <collection field="preferreDRESPONSEList">
-      <structure map-as="com.sysdelphia.bindings.mismo.ENVELOPEPREFERREDRESPONSEType"></structure>
+      <structure map-as="com.sysdelphia.bindings.mismo.PreferredResponse"></structure>
     </collection>
     <value name="_SequenceIdentifier" field="_SequenceIdentifier" usage="optional" style="attribute"/>
     <value name="_Name" field="_Name" usage="optional" style="attribute"/>
@@ -378,9 +378,9 @@
     <namespace uri="http://www.w3.org/2000/09/xmldsig#" default="elements"/>
     <collection field="choiceList" ordered="false"></collection>
   </mapping>
-  <mapping name="RESPOND_TO_PARTY" class="com.sysdelphia.bindings.mismo.ENVELOPERESPONDTOPARTYType">
+  <mapping name="RESPOND_TO_PARTY" class="com.sysdelphia.bindings.mismo.RespondToParty">
     <collection field="contacTDETAILList">
-      <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.ENVELOPECONTACTDETAILType"></structure>
+      <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.ContactDetail"></structure>
     </collection>
     <value name="_Name" field="_Name" usage="optional" style="attribute"/>
     <value name="_StreetAddress" field="_StreetAddress" usage="optional" style="attribute"/>
@@ -392,9 +392,9 @@
     <value name="_TransactionIdentifier" field="_TransactionIdentifier" usage="optional" style="attribute"/>
     <value name="_ID" field="_ID" usage="optional" style="attribute"/>
   </mapping>
-  <mapping name="RESPONDING_PARTY" class="com.sysdelphia.bindings.mismo.ENVELOPERESPONDINGPARTYType">
+  <mapping name="RESPONDING_PARTY" class="com.sysdelphia.bindings.mismo.RespondingParty">
     <collection field="contacTDETAILList">
-      <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.ENVELOPECONTACTDETAILType"></structure>
+      <structure name="CONTACT_DETAIL" type="com.sysdelphia.bindings.mismo.ContactDetail"></structure>
     </collection>
     <value name="_Name" field="_Name" usage="optional" style="attribute"/>
     <value name="_StreetAddress" field="_StreetAddress" usage="optional" style="attribute"/>
@@ -406,30 +406,30 @@
     <value name="_TransactionIdentifier" field="_TransactionIdentifier" usage="optional" style="attribute"/>
     <value name="_ID" field="_ID" usage="optional" style="attribute"/>
   </mapping>
-  <mapping name="RESPONSE_DATA" class="com.sysdelphia.bindings.mismo.ENVELOPERESPONSEDATAType"></mapping>
-  <mapping name="ENVELOPE_RESPONSE_GROUP_Type" class="com.sysdelphia.bindings.mismo.ENVELOPERESPONSEGROUPType">
-    <structure field="respondinGPARTY" usage="required" map-as="com.sysdelphia.bindings.mismo.ENVELOPERESPONDINGPARTYType"></structure>
+  <mapping name="RESPONSE_DATA" class="com.sysdelphia.bindings.mismo.ResponseData"></mapping>
+  <mapping name="ENVELOPE_RESPONSE_GROUP_Type" class="com.sysdelphia.bindings.mismo.ResponseGroup">
+    <structure field="respondinGPARTY" usage="required" map-as="com.sysdelphia.bindings.mismo.RespondingParty"></structure>
     <collection field="submittinGPARTYList">
-      <structure name="SUBMITTING_PARTY" type="com.sysdelphia.bindings.mismo.ENVELOPESUBMITTINGPARTYType"></structure>
+      <structure name="SUBMITTING_PARTY" type="com.sysdelphia.bindings.mismo.SubmittingParty"></structure>
     </collection>
-    <structure field="responDTOPARTY" usage="required" map-as="com.sysdelphia.bindings.mismo.ENVELOPERESPONDTOPARTYType"></structure>
+    <structure field="responDTOPARTY" usage="required" map-as="com.sysdelphia.bindings.mismo.RespondToParty"></structure>
     <collection field="responseList">
-      <structure map-as="com.sysdelphia.bindings.mismo.ENVELOPERESPONSEType"></structure>
+      <structure map-as="com.sysdelphia.bindings.mismo.Response"></structure>
     </collection>
     <structure name="Signature" field="signature" usage="optional" type="com.sysdelphia.bindings.w3.xmldsig.SignatureType"></structure>
     <value name="MISMOVersionID" field="mismoVersionID" usage="optional" style="attribute"/>
     <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
     <value name="_ID" field="_ID" usage="optional" style="attribute"/>
   </mapping>
-  <mapping name="RESPONSE" class="com.sysdelphia.bindings.mismo.ENVELOPERESPONSEType">
+  <mapping name="RESPONSE" class="com.sysdelphia.bindings.mismo.Response">
     <collection field="keyList">
-      <structure name="KEY" type="com.sysdelphia.bindings.mismo.ENVELOPEKEYType"></structure>
+      <structure name="KEY" type="com.sysdelphia.bindings.mismo.Key"></structure>
     </collection>
     <collection field="responsEDATAList">
-      <structure map-as="com.sysdelphia.bindings.mismo.ENVELOPERESPONSEDATAType"></structure>
+      <structure map-as="com.sysdelphia.bindings.mismo.ResponseData"></structure>
     </collection>
     <collection field="statusList">
-      <structure map-as="com.sysdelphia.bindings.mismo.ENVELOPESTATUSType"></structure>
+      <structure map-as="com.sysdelphia.bindings.mismo.Status"></structure>
     </collection>
     <value name="_ID" field="_ID" usage="optional" style="attribute"/>
     <value name="ResponseDateTime" field="responseDateTime" usage="optional" style="attribute"/>
@@ -438,7 +438,7 @@
     <value name="LoginAccountPassword" field="loginAccountPassword" usage="optional" style="attribute"/>
     <value name="_Identifier" field="_Identifier" usage="optional" style="attribute"/>
   </mapping>
-  <mapping name="STATUS" class="com.sysdelphia.bindings.mismo.ENVELOPESTATUSType">
+  <mapping name="STATUS" class="com.sysdelphia.bindings.mismo.Status">
     <value name="_Condition" field="_Condition" usage="optional" style="attribute"/>
     <value name="_Code" field="_Code" usage="optional" style="attribute"/>
     <value name="_Name" field="_Name" usage="optional" style="attribute"/>

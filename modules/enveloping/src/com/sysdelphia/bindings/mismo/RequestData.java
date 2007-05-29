@@ -1,4 +1,4 @@
 package com.sysdelphia.bindings.mismo;
 
-public class ENVELOPERESPONSEDATAType {
+public class RequestData {
 }

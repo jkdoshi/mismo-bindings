@@ -1,6 +1,6 @@
 package com.sysdelphia.bindings.mismo;
 
-public class ENVELOPEPREFERREDRESPONSEType {
+public class PreferredResponse {
   protected String _Format;
 
   protected String _Method;

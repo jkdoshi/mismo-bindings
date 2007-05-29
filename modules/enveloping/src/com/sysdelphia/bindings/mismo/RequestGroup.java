@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.ArrayList;
 
 
-public class ENVELOPEREQUESTGROUPType {
+public class RequestGroup {
   protected SignatureType signature;
 
   protected String mismoVersionID;
@@ -17,48 +17,48 @@ public class ENVELOPEREQUESTGROUPType {
   protected String _ID;
 
 
-  public void addREQUESTINGPARTY(ENVELOPEREQUESTINGPARTYType requestinGPARTY) {
+  public void addREQUESTINGPARTY(RequestingParty requestinGPARTY) {
     requestinGPARTYList.add(requestinGPARTY);
   }
 
-  public ENVELOPEREQUESTINGPARTYType getREQUESTINGPARTY(int index) {
-    return (ENVELOPEREQUESTINGPARTYType)requestinGPARTYList.get( index );
+  public RequestingParty getREQUESTINGPARTY(int index) {
+    return (RequestingParty)requestinGPARTYList.get( index );
   }
 
   public int sizeREQUESTINGPARTYList() {
     return requestinGPARTYList.size();
   }
 
-  public void addRECEIVINGPARTY(ENVELOPERECEIVINGPARTYType receivinGPARTY) {
+  public void addRECEIVINGPARTY(ReceivingParty receivinGPARTY) {
     receivinGPARTYList.add(receivinGPARTY);
   }
 
-  public ENVELOPERECEIVINGPARTYType getRECEIVINGPARTY(int index) {
-    return (ENVELOPERECEIVINGPARTYType)receivinGPARTYList.get( index );
+  public ReceivingParty getRECEIVINGPARTY(int index) {
+    return (ReceivingParty)receivinGPARTYList.get( index );
   }
 
   public int sizeRECEIVINGPARTYList() {
     return receivinGPARTYList.size();
   }
 
-  public void addSUBMITTINGPARTY(ENVELOPESUBMITTINGPARTYType submittinGPARTY) {
+  public void addSUBMITTINGPARTY(SubmittingParty submittinGPARTY) {
     submittinGPARTYList.add(submittinGPARTY);
   }
 
-  public ENVELOPESUBMITTINGPARTYType getSUBMITTINGPARTY(int index) {
-    return (ENVELOPESUBMITTINGPARTYType)submittinGPARTYList.get( index );
+  public SubmittingParty getSUBMITTINGPARTY(int index) {
+    return (SubmittingParty)submittinGPARTYList.get( index );
   }
 
   public int sizeSUBMITTINGPARTYList() {
     return submittinGPARTYList.size();
   }
 
-  public void addREQUEST(ENVELOPEREQUESTType request) {
+  public void addREQUEST(Request request) {
     requestList.add(request);
   }
 
-  public ENVELOPEREQUESTType getREQUEST(int index) {
-    return (ENVELOPEREQUESTType)requestList.get( index );
+  public Request getREQUEST(int index) {
+    return (Request)requestList.get( index );
   }
 
   public int sizeREQUESTList() {
