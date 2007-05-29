@@ -117,7 +117,7 @@
 			<arg line="${xsd2jibx.grammars}" />
 		</java>
 		<available property="exists.gen-src" file="${gen-src.dir}" />
-		<available property="exists.binding.xml" file="${gen-src.dir}/${binding.xml}" />
+		<available property="exists.binding.xml" file="${src.dir}/${binding.xml}" />
 		<delete>
 			<fileset dir="${gen-src.dir}">
 				<present targetdir="${src.dir}" />
