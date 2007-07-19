@@ -1,5 +1,0 @@
-#summary mismo-bindings project developer guide.
-
-= Developer Guide =
-
-TBD.
