@@ -1,4 +1,5 @@
 #summary mismo-bindings user guide.
+#labels Featured
 
 = mismo-bindings User Guide =
 
