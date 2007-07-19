@@ -9,4 +9,4 @@
  * Run "ant" from the new "mismo-bindings" directory where you downloaded the code. This compiles the code and produces JAR files in the "dist" subdirectory.
  * Open the project in your favorite IDE (Eclipse project files are included) and look at the sources under "modules" directory.
  * Try running some tests from one of the "test" directories.
- * If you still have questions, contact us at opensource@sysdelphia.com
+ * If you still have questions or want to contribute to the project, contact us at opensource@sysdelphia.com
