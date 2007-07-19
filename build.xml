@@ -18,6 +18,11 @@
 		<mkdir dir="${dist.dir}" />
 		<jar destfile="${jar.file}">
 			<fileset dir="${build.classes}" />
+			<manifest>
+				<attribute name="Project-Name" value="${ant.project.name}"/>
+				<attribute name="Project-WebSite" value="${project.website}"/>
+				<attribute name="Implementation-Version" value="${project.release.version}"/>
+			</manifest>
 		</jar>
 	</target>
 
@@ -91,6 +96,16 @@
 	</target>
 
 	<!-- misc. targets (not always used) -->
+	<target name="dist" depends="init" description="removes all outputs of the build">
+		<zip destfile="${project.full.name}.zip">
+			<fileset dir="." includes="_readme.txt,build.xml,module.properties,project.properties">
+				<include name="dist/**"/>
+				<include name="doc/**"/>
+				<include name="lib/**"/>
+				<include name="modules/**"/>
+			</fileset>
+		</zip>
+	</target>
 	<target name="dist-clean" depends="clean" description="removes all outputs of the build">
 		<delete dir="${dist.dir}" />
 	</target>
