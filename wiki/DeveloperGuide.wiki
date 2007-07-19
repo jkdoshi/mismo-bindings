@@ -1,4 +1,5 @@
 #summary mismo-bindings project developer guide.
+#labels Featured
 
 = Developer Guide =
 
