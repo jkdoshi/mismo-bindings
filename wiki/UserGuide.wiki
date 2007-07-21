@@ -8,5 +8,12 @@ This document gives the overview on how to use the mismo-bindings toolkit.
 = What is "mismo-bindings"? =
 It is a toolkit (a collection of libraries and utilities), rather than a "framework" (frameworks put restrictions on applications that use them, we don't), for developing Java applications (we do intend to support .NET at a later stage) that deal with (consumer, produce) XML documents written according to [http://www.mismo.org MISMO] XML specifications. You will be able to convert MISMO XML documents into Java Beans and back to XML.
 
+You can get a copy of the MISMO XML specifications by visiting 
+
 = Getting Started =
-First, 
+ # First, download latest release from the [http://code.google.com/p/mismo-bindings/downloads/list downloads area].
+ # Unzip the ZIP file into a new directory named "mismo-bindings"
+ # An Eclipse (Java IDE) project is already included (you'll need Eclipse 3.2+), but if you have your own favorite IDE, you'll have to create a project.
+ # A sample test client is com.sysdelphia.bindings.mismo.EnvelopingTest in the "modules/enveloping/test" source folder.
+ # Make sure the code is compile either using IDE, or using Ant and the included "build.xml" file.
+ # Run the above test. It should pass.
