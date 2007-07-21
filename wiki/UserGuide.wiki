@@ -3,4 +3,10 @@
 
 = mismo-bindings User Guide =
 
-TBD.
+This document gives the overview on how to use the mismo-bindings toolkit.
+
+= What is "mismo-bindings"? =
+It is a toolkit (a collection of libraries and utilities), rather than a "framework" (frameworks put restrictions on applications that use them, we don't), for developing Java applications (we do intend to support .NET at a later stage) that deal with (consumer, produce) XML documents written according to [http://www.mismo.org MISMO] XML specifications. You will be able to convert MISMO XML documents into Java Beans and back to XML.
+
+= Getting Started =
+First, 
