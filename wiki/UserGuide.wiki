@@ -14,6 +14,6 @@ You can get a copy of the MISMO XML specifications by visiting
  # First, download latest release from the [http://code.google.com/p/mismo-bindings/downloads/list downloads area].
  # Unzip the ZIP file into a new directory named "mismo-bindings"
  # An Eclipse (Java IDE) project is already included (you'll need Eclipse 3.2+), but if you have your own favorite IDE, you'll have to create a project.
- # A sample test client is com.sysdelphia.bindings.mismo.EnvelopingTest in the "modules/enveloping/test" source folder.
+ # A sample test client is [http://mismo-bindings.googlecode.com/svn/trunk/modules/enveloping/test/com/sysdelphia/bindings/mismo/EnvelopingTest.java com.sysdelphia.bindings.mismo.EnvelopingTest] in the "modules/enveloping/test" source folder.
  # Make sure the code is compile either using IDE, or using Ant and the included "build.xml" file.
  # Run the above test. It should pass.
