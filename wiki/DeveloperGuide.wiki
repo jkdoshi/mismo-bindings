@@ -3,6 +3,8 @@
 
 = Developer Guide =
 
+Before following this DeveloperGuide, you must follow the UserGuide first.
+
  * Make sure you have a Subversion Client (e.g. TortoiseSVN)
  * Get code from SVN by following the instructions at http://code.google.com/p/mismo-bindings/source
  * Make sure you have ANT 1.6 installed and in your path
