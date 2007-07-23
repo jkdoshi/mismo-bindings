@@ -8,9 +8,12 @@ This document gives the overview on how to use the mismo-bindings toolkit. If yo
 = What is "mismo-bindings" project? =
 It is a toolkit (a collection of libraries and utilities), rather than a "framework" (frameworks put restrictions on applications that use them, we don't), for developing Java applications (we do intend to support .NET at a later stage) that deal with (consumer, produce) XML documents written according to [http://www.mismo.org MISMO] XML specifications. You will be able to convert MISMO XML documents into Java Beans and back to XML.
 
-You can get a copy of the MISMO XML specifications by visiting 
+= Getting Familiar with MISMO specifications =
+ * Read the [http://www.mismo.org/files/mismo/MISMOGeneralImplementationGuidev2.pdf General Implementation Guide]
+ * Optionally, read the [http://www.mismo.org/files/mismo/MISMOXMLDesignRulesandGuidelines,RC10.pdf XML Design Rules and Guidelines]
+ * To do any serious MISMO XML development, you will also need a copy of the specification you are going to work with. A bundle of all specifications can be downloaded from http://www.mismo.org/files/mismo/MISMOSpring2007Release.zip. 
 
-= Getting Started =
+= Getting Started with MISMO Bindings Project =
  # First, download latest release from the [http://code.google.com/p/mismo-bindings/downloads/list downloads area].
  # Unzip the ZIP file into a new directory named "mismo-bindings"
  # An Eclipse (Java IDE) project is already included (you'll need Eclipse 3.2+), but if you have your own favorite IDE, you'll have to create a project.
