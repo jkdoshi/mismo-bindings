@@ -3,7 +3,7 @@
 
 = Developer Guide =
 
-Before following this DeveloperGuide, you must follow the UserGuide first.
+Before following this DeveloperGuide, you must follow the UserGuide first. This document builds upon the knowledge gained from studying the UserGuide.
 
  * Make sure you have a Subversion Client (e.g. TortoiseSVN)
  * Get code from SVN by following the instructions at http://code.google.com/p/mismo-bindings/source
