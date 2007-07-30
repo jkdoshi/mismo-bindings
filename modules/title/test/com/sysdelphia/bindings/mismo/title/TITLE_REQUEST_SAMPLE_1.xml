@@ -35,11 +35,11 @@
                 <MORTGAGE_TERMS BaseLoanAmount="320000" LienPriorityType="FirstLien"/>
 				<PROPERTY _StreetAddress="1111 Park Ave" _City="Bedford" _State="IN" _County="Lawrence" _PostalCode="47421" _StreetAddress2="XYZ" _TitleCategoryType="SingleFamily"/>
                 <KEY _Name="LIEN_HOLDER" _Value="XYZ MORTGAGE"/>
-            <KEY _Name="TITLE_POLICY" _Value="FULL ALTA"/>
-            <_PRODUCT>
-               <_TYPE _Description="346" _Identifier="XyzProductCode"/>
-               <_TYPE _Description="80000.0" _Identifier="CombinedLoanAmount"/>
-            </_PRODUCT>
+	            <KEY _Name="TITLE_POLICY" _Value="FULL ALTA"/>
+	            <_PRODUCT>
+	               <_TYPE _Description="346" _Identifier="XyzProductCode"/>
+	               <_TYPE _Description="80000.0" _Identifier="CombinedLoanAmount"/>
+	            </_PRODUCT>
             </TITLE_REQUEST>
 		</REQUEST_DATA>
 	</REQUEST>
